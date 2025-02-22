@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/New Levels/MainMenu.unity
+    guid: 6dbf44efbffbd4325880f24ad9340176
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach1 Horizontal/NEW Level 1.unity
+    guid: 5dcbd2cd7617f4a65a6bc6f94c042509
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach1 Horizontal/NEW Level 2.unity
+    guid: 9fbc0f029366e40ba9a5e0ee8561f285
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach1 Horizontal/NEW Level 3.unity
+    guid: dc80c5fd4935642da98a78c16c01a02a
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach2 Vertical/NEW Level 4.unity
+    guid: 8082a1b1369ca4d20beb84a667ada189
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach2 Vertical/NEW Level 5.unity
+    guid: 4fdaf053d2878442e97c594bde08fab9
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach2 Vertical/NEW Level 6.unity
+    guid: 00061e62dc7b6426d9428398fcff0e97
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach3 Transparent/NEW Level 7.unity
+    guid: 1f3c2666f8ffb4946b5c104f53ee3d61
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach3 Transparent/NEW Level 8.unity
+    guid: 479ff07dd2724492694a887a723521c3
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach3 Transparent/NEW Level 9.unity
+    guid: 53202b328428f46c2af11abbe9ae0b55
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach4 Rotation/NEW Level 10.unity
+    guid: c40f9ea9f673d46d88bfb615712b59c7
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach4 Rotation/NEW Level 11.unity
+    guid: b4dd1bb482a0840429d88ab107fe4332
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach4 Rotation/NEW Level 12.unity
+    guid: 08e8f7f7444464745b49918f2898c641
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach5 SpikesAttached/NEW Level 13.unity
+    guid: 7c326ee0c8657442eb9953530b8bdf1c
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach5 SpikesAttached/NEW Level 14.unity
+    guid: e013393f9fd644380b5fc39d47cb74d3
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach5 SpikesAttached/NEW Level 15.unity
+    guid: a551634af09c24592a36dad36ac5ae42
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 16.unity
+    guid: 4cb864809d958480395664f9f6dd3a99
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 17.unity
+    guid: f6ce20e0e99414f9986c8caec83328b5
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 18.unity
+    guid: 3641852d398f44a56b19d14424649aea
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach7 MoveFlag/NEW Level 19.unity
+    guid: 612a2878843034b8b8a8d678ba4573f0
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach7 MoveFlag/NEW Level 20.unity
+    guid: 501b17e327440410e8ec9a58016cc7a1
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Teach7 MoveFlag/NEW Level 21.unity
+    guid: d0ebbcd6191aa4207b17a940b64849b8
+  m_configObjects: {}
