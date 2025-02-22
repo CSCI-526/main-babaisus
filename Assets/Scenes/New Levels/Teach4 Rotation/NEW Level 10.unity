@@ -701,7 +701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpUpCube (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3019339034911485101, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
+    - {fileID: 3527702552653075054, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
+    - {fileID: 5406449660318294513, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1856,7 +1859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpUpCube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3019339034911485101, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
+    - {fileID: 3527702552653075054, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
+    - {fileID: 5406449660318294513, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
