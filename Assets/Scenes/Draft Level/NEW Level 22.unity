@@ -5282,6 +5282,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 1.1077886
       objectReference: {fileID: 0}
+    - target: {fileID: 7267041052747825365, guid: ce366e83dfbc143e394d29f5a0d56ab6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea8aca4a8415448a68d62d46c4431bfc, type: 2}
     - target: {fileID: 9049883101385358862, guid: ce366e83dfbc143e394d29f5a0d56ab6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.608761
