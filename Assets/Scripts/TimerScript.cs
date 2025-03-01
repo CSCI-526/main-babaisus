@@ -18,7 +18,7 @@ public class TimerScript : MonoBehaviour
     public bool timerDone = false;
 
     public GameObject circle;
-    public float circleSpeed = 4.0f;
+    // public float circleSpeed = 4.0f;
     private float cutoff1;
     private float cutoff2;
     private float cutoff3;
@@ -43,9 +43,10 @@ public class TimerScript : MonoBehaviour
             if (Input.GetKey(KeyCode.Space)){
                 timerStarted = true;
                 timerDone = true;
-                Rigidbody2D rb = circle.GetComponent<Rigidbody2D>();
-                rb.gravityScale = 1.0f;
-                rb.velocity = new Vector2(circleSpeed, rb.velocity.y);
+                circle.GetComponent<BallMove>().Begin();
+                // Rigidbody2D rb = circle.GetComponent<Rigidbody2D>();
+                // rb.gravityScale = 1.0f;
+                // rb.velocity = new Vector2(circleSpeed, rb.velocity.y);
             }
         }
 
