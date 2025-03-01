@@ -297,9 +297,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1302852378}
     m_Modifications:
+    - target: {fileID: 1680008312421780147, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1695862794135217869, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.7125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079045735770565175, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3458056461586339995, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -503,6 +511,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 3019339034911485101, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4592802767179232969, guid: c48d37d4cc7c34f8f95900b79dc028ff, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -571,7 +583,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386604132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1261,6 +1273,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1302852378}
     m_Modifications:
+    - target: {fileID: 1680008312421780147, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079045735770565175, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3458056461586339995, guid: 416cd023c89374fde8c9fb20b53bfd0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.74187803
