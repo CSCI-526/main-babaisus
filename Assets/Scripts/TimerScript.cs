@@ -7,33 +7,33 @@ using UnityEngine;
 public class TimerScript : MonoBehaviour
 {
     public TextMeshProUGUI textMP;
-    public GameObject Star1;
-    public GameObject Star2;
-    public GameObject Star3;
-    public GameObject Penalty1;
-    public GameObject Penalty2;
-    public GameObject Penalty3;
+    public GameObject StarRight;
+    public GameObject StarMiddle;
+    public GameObject StarLeft;
+    public GameObject PenaltyRight;
+    public GameObject PenaltyMiddle;
+    public GameObject PenaltyLeft;
     public static float timeElapsed;
     public bool timerStarted = false;
     public bool timerDone = false;
 
     public GameObject circle;
     // public float circleSpeed = 4.0f;
-    private float cutoff1;
-    private float cutoff2;
-    private float cutoff3;
-    private bool penalty1Given = false;
-    private bool penalty2Given = false;
-    private bool penalty3Given = false;
+    private float cutoffRight;
+    private float cutoffMiddle;
+    private float cutoffLeft;
+    private bool penaltyRightGiven = false;
+    private bool penaltyMiddleGiven = false;
+    private bool penaltyLeftGiven = false;
     private int starCount;
     // Start is called before the first frame update
     void Start()
     {
         timeElapsed = 0.0f;
         starCount = 3;
-        cutoff1 = (float) Variables.Object(Star1).Get("cutoff");
-        cutoff2 = (float) Variables.Object(Star2).Get("cutoff");
-        cutoff3 = (float) Variables.Object(Star3).Get("cutoff");
+        cutoffRight = StarRight.GetComponent<StarText>().cutoff; //Variables.Object(StarRight).Get("cutoff");
+        cutoffMiddle = StarMiddle.GetComponent<StarText>().cutoff;
+        cutoffLeft = StarLeft.GetComponent<StarText>().cutoff;
     }
 
     // Update is called once per frame
@@ -44,9 +44,6 @@ public class TimerScript : MonoBehaviour
                 timerStarted = true;
                 timerDone = true;
                 circle.GetComponent<BallMove>().Begin();
-                // Rigidbody2D rb = circle.GetComponent<Rigidbody2D>();
-                // rb.gravityScale = 1.0f;
-                // rb.velocity = new Vector2(circleSpeed, rb.velocity.y);
             }
         }
 
@@ -61,19 +58,19 @@ public class TimerScript : MonoBehaviour
 
         if (timerStarted && !timerDone){
             timeElapsed += Time.deltaTime;
-            if (timeElapsed >= cutoff1 && !penalty1Given){
-                Penalty1.SetActive(true);
-                penalty1Given = true;
+            if (timeElapsed >= cutoffRight && !penaltyRightGiven){
+                PenaltyRight.SetActive(true);
+                penaltyRightGiven = true;
                 starCount -= 1;
             }
-            if (timeElapsed >= cutoff2 && !penalty2Given){
-                Penalty2.SetActive(true);
+            if (timeElapsed >= cutoffMiddle && !penaltyMiddleGiven){
+                PenaltyMiddle.SetActive(true);
                 starCount -= 1;
-                penalty2Given = true;
+                penaltyMiddleGiven = true;
             }
-            if (timeElapsed >= cutoff3 && !penalty3Given){
-                Penalty3.SetActive(true);
-                penalty3Given = true;
+            if (timeElapsed >= cutoffLeft && !penaltyLeftGiven){
+                PenaltyLeft.SetActive(true);
+                penaltyLeftGiven = true;
                 starCount -= 1;
             }
             //if > star, activate cross out
