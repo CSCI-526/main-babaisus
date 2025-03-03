@@ -5,10 +5,11 @@ using UnityEngine;
 public class JumpScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    Vector2 jumpForce = new Vector2(0, 1);
+    Vector2 jumpForce;
     void Start()
     {
-        
+        jumpForce = new Vector2(transform.up.x, transform.up.y);
+        jumpForce *= 10;
     }
 
     // Update is called once per frame
@@ -22,7 +23,9 @@ public class JumpScript : MonoBehaviour
         if (collision.gameObject.tag.Equals("Circle")){
             Debug.Log("Jump hit, jump up");
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y + 10);
+            //playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y + 10);
+            playerRb.velocity += jumpForce;
+            //playerRb.velocity = new Vector2(playerRb.velocity.x + 10 * transform.up.x, playerRb.velocity.y + 10);
         }
     }
 }
