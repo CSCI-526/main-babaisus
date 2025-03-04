@@ -18,6 +18,7 @@ public class TimerScript : MonoBehaviour
     public bool timerDone = false;
 
     public GameObject circle;
+    public GameObject circle2;
     // public float circleSpeed = 4.0f;
     private float cutoffRight;
     private float cutoffMiddle;
@@ -43,7 +44,12 @@ public class TimerScript : MonoBehaviour
             if (Input.GetKey(KeyCode.Space)){
                 timerStarted = true;
                 timerDone = true;
-                circle.GetComponent<BallMove>().Begin();
+                if(circle != null){
+                    circle.GetComponent<BallMove>().Begin();
+                }
+                else if(circle2 != null){
+                    circle2.GetComponent<BallMoveWithPlatform>().Begin();
+                }
             }
         }
 
