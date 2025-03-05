@@ -206,6 +206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStill: {fileID: 1423272336359025051}
   playerMoving: {fileID: 8770883533468796201}
+  horizSpeed: 4
+  vertSpeed: 4
+  angularSpeed: 50
+  goTransparent: 1
 --- !u!1 &8770883533468796201
 GameObject:
   m_ObjectHideFlags: 0

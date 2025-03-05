@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    public static int restartCounter = 0;
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.R))
@@ -32,5 +33,6 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame() {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        restartCounter++;
     }
 }

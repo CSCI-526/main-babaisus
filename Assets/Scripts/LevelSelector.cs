@@ -45,6 +45,8 @@ public class LevelSelector : MonoBehaviour
         // var type = ToggleSwitch.CurrentValue ? "WackyLevel" : "NEW Level ";
         LevelSelectionManager.currentLevel = actualLevel;
         Debug.Log("current select: " + LevelSelectionManager.currentLevel);
+        PauseMenu.restartCounter = 0;
         SceneManager.LoadScene(LevelSelectionManager.type + actualLevel.ToString());
+
     }
 }

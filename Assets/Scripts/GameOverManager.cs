@@ -50,6 +50,10 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 1f;
         LevelSelectionManager.currentLevel += 1;
         Debug.Log("next level: " + LevelSelectionManager.currentLevel.ToString());
+
+        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]=PauseMenu.restartCounter;
+        Debug.Log("google restart value: " + LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]);
+        PauseMenu.restartCounter=0;
         SceneManager.LoadScene(LevelSelectionManager.type + LevelSelectionManager.currentLevel.ToString());
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
