@@ -9,7 +9,7 @@ public class SendToGoogle : MonoBehaviour
     //https://docs.google.com/forms/u/4/d/1B2rWPcdYmn3iYth0e-OOTYbjxUy_TqX3THqMeLikAA4/formResponse
     [SerializeField] private string URL;
 
-    private long _sessionID;
+    private string _sessionID="";
     private int _platMoveTime;
     private int _lastMoveTime;
     private bool _completeLevel;
@@ -21,7 +21,7 @@ public class SendToGoogle : MonoBehaviour
     private void Awake()
     {
         // Assign sessionID to identify playtests
-        _sessionID = DateTime.Now.Ticks;
+        _sessionID = Guid.NewGuid().ToString();
         //winLoadNext = GetComponent<WinLoadNext>();
 
     }
@@ -35,7 +35,7 @@ public class SendToGoogle : MonoBehaviour
         _completeLevel = false;
         Debug.Log("trying to access" + (LevelSelectionManager.currentLevel-1));
         _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1];
-        _noStars = 0;
+        _noStars = GameOverManager.starForLevel;
 
 
 

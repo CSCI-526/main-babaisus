@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
-    private int starForLevel = 0;
+    public static int starForLevel = 0;
     public GameObject gameOverUI;
     public GameObject gamePassUI;
     public GameObject zeroGrid;
