@@ -6,6 +6,7 @@ using System;
 
 public class SendToGoogle : MonoBehaviour
 {
+    //https://docs.google.com/forms/u/4/d/1B2rWPcdYmn3iYth0e-OOTYbjxUy_TqX3THqMeLikAA4/formResponse
     [SerializeField] private string URL;
 
     private long _sessionID;
@@ -28,7 +29,7 @@ public class SendToGoogle : MonoBehaviour
         public void Send()
     {
         // Assign variables
-        _currentLevel = LevelSelectionManager.currentLevel-1;
+        _currentLevel = (LevelSelectionManager.currentLevel)-1;
         _platMoveTime = 0;
         _lastMoveTime = 0;
         _completeLevel = false;
@@ -44,10 +45,10 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), _platMoveTime.ToString(), _lastMoveTime.ToString(), _completeLevel.ToString(), _levelClearTries.ToString(), _noStars.ToString()));
+        StartCoroutine(Post(_sessionID.ToString(), _platMoveTime.ToString(), _lastMoveTime.ToString(), _completeLevel.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString()));
     }
 
-    private IEnumerator Post(string sessionID, string platMoveTime, string lastMoveTime, string completeLevel, string levelClearTries, string noStars)
+    private IEnumerator Post(string sessionID, string platMoveTime, string lastMoveTime, string completeLevel, string levelClearTries, string noStars, string currentLevel)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
@@ -57,6 +58,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1544985288", completeLevel);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
+        form.AddField("entry.1116312316", currentLevel);
         
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
