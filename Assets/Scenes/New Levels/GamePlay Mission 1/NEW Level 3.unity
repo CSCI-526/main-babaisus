@@ -454,15 +454,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: vertSpeed
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: angularSpeed
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: goTransparent
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6649666695536230637, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: m_LocalPosition.x
