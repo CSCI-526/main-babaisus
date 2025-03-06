@@ -26,13 +26,21 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToHome(int sceneID) {
         Time.timeScale = 1f;
+        LevelSelectionManager.currentLevel += 1;// for restart counter
+
+        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]=PauseMenu.restartCounter;
+        PauseMenu.restartCounter=0;
+        
         LevelSelectionManager.ShowLevelSelector = true; 
         SceneManager.LoadScene(sceneID);
     }
 
     public void RestartGame() {
         Time.timeScale = 1f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         restartCounter++;
+        Debug.Log("Restart Counter: " + restartCounter);
+        
     }
 }
