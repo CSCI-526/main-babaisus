@@ -25,9 +25,15 @@ public class LevelSelector : MonoBehaviour
     }
 
     private void OnEnable() {
-        actualLevel = (LevelSelectionManager.mission - 1) * 3 + levelInMission;
+        int currentType = LevelSelectionManager.type;
+        int numberOfMission = currentType == 0 ? 3 : 2;
+        if(currentType == 0 && LevelSelectionManager.mission >= 3) {
+            actualLevel = 5 + (LevelSelectionManager.mission - 3) * numberOfMission + levelInMission;
+        } else {
+            actualLevel = (LevelSelectionManager.mission - 1) * numberOfMission + levelInMission;
+        }
         levelText.text = actualLevel.ToString();
-        int starCount = PlayerPrefs.GetInt("stars" + LevelSelectionManager.type + actualLevel.ToString(), 0);
+        int starCount = PlayerPrefs.GetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + actualLevel.ToString(), 0);
         // Debug.Log("star count: " + starCount);
         SpawnStar(starCount);
     }
@@ -40,13 +46,33 @@ public class LevelSelector : MonoBehaviour
         threeStar.SetActive(starCount == 3);
     }
 
-    public void OpenLevelScene() {
-        Debug.Log("click");
-        // var type = ToggleSwitch.CurrentValue ? "WackyLevel" : "NEW Level ";
+    public void onSelectLevel () {
         LevelSelectionManager.currentLevel = actualLevel;
         Debug.Log("current select: " + LevelSelectionManager.currentLevel);
         PauseMenu.restartCounter = 0;
-        SceneManager.LoadScene(LevelSelectionManager.type + actualLevel.ToString());
 
+        if(LevelSelectionManager.type == 1 && levelInMission == 1) {
+            // for level 1s for each baby mission
+            // show tutorial image -> press button -> play / go back
+            SceneManager.LoadScene("TutorialPicScene");
+        } else {
+            OpenLevelScene();
+        }
+    }
+
+    public void OpenLevelScene() {
+        int currentType = LevelSelectionManager.type;
+        // SceneManager.LoadScene(LevelSelectionManager.levelPrefix[currentType] + actualLevel.ToString());
+        
+        // Maybe it's better to load by SceneId
+        int sceneId = 0; // MainMenu scene backup
+        if(currentType == 1) {
+            // tutorial starts with 2
+            sceneId = actualLevel;
+        } else {
+            // tutorial starts with 9
+            sceneId = 8 + actualLevel;
+        }
+        SceneManager.LoadScene(sceneId);
     }
 }

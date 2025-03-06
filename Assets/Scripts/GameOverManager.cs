@@ -33,7 +33,11 @@ public class GameOverManager : MonoBehaviour
         timer = FindObjectOfType<TimerScript>();
         Time.timeScale = 0f;
         gamePassUI.SetActive(true);
-        if(LevelSelectionManager.currentLevel == 21) {
+
+        var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 8;
+        var generalCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 14;
+
+        if(tutorialCompleted || generalCompleted) {
             nextButton.SetActive(false);
             passText.text = "You Completed!";
         }
@@ -41,8 +45,9 @@ public class GameOverManager : MonoBehaviour
         starForLevel = timer.GetStarCount();
         SpawnStar(starForLevel);
         Debug.Log("----- star acquired: " + starForLevel.ToString());
-        if(starForLevel > PlayerPrefs.GetInt("stars" + LevelSelectionManager.type + LevelSelectionManager.currentLevel.ToString(), 0)) {
-            PlayerPrefs.SetInt("stars" + LevelSelectionManager.type + LevelSelectionManager.currentLevel.ToString(), starForLevel);
+        int currentType = LevelSelectionManager.type;
+        if(starForLevel > PlayerPrefs.GetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString(), 0)) {
+            PlayerPrefs.SetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString(), starForLevel);
         }
     }
 
@@ -54,7 +59,35 @@ public class GameOverManager : MonoBehaviour
         LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]=PauseMenu.restartCounter;
         Debug.Log("google restart value: " + LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]);
         PauseMenu.restartCounter=0;
-        SceneManager.LoadScene(LevelSelectionManager.type + LevelSelectionManager.currentLevel.ToString());
+
+        int currentType = LevelSelectionManager.type;
+        int numberOfMission = LevelSelectionManager.type == 0 ? 3 : 2;
+        if(currentType == 1) {
+            // tutorial
+            if(LevelSelectionManager.currentLevel % numberOfMission == 1) {
+                LevelSelectionManager.mission += 1;
+            }
+        } else {
+            // general mission
+            switch(LevelSelectionManager.currentLevel) {
+                case 4:
+                case 6:
+                case 9:
+                case 12:
+                    LevelSelectionManager.mission += 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if(currentType == 1 && LevelSelectionManager.currentLevel % numberOfMission == 1) {
+            // load tutorial graphic for level 1 
+            SceneManager.LoadScene("TutorialPicScene");
+        } else {
+            Debug.Log("======= load next: " + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
+            SceneManager.LoadScene(LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
+        }
+        
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
