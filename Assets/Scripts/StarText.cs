@@ -11,7 +11,8 @@ public class StarText : MonoBehaviour
     public TextMeshProUGUI starText;
     void Start()
     {
-        starText.text = cutoff.ToSafeString(); //;Variables.Object(gameObject).Get("cutoff").ToString();
+        //starText.text = cutoff.ToSafeString(); //;Variables.Object(gameObject).Get("cutoff").ToString();
+        starText.text = $"{cutoff}s";
     }
 
     // Update is called once per frame
