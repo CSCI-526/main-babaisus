@@ -377,10 +377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageComponent: {fileID: 1112903094}
   sprites:
-  - {fileID: 21300000, guid: 251f8eb783ff64d7db101ab9bffb9dee, type: 3}
-  - {fileID: 21300000, guid: e8ce0ce3f89d343a4bf2ce7cb7bdd07b, type: 3}
-  - {fileID: 21300000, guid: f71af4c4844764899841647bc0820ce7, type: 3}
-  - {fileID: 21300000, guid: ac19c950ece994c939a18f90691cde4e, type: 3}
+  - {fileID: 21300000, guid: 8df356564f4054f818f507eebe9901e0, type: 3}
+  - {fileID: 21300000, guid: 7f89a94e769774116af9e95bbaed83ae, type: 3}
+  - {fileID: 21300000, guid: a25074bd23b5f4e1d9dca7754f32e1c4, type: 3}
+  - {fileID: 21300000, guid: 5e0c08a8d3ee54f36a02c18e56da6f91, type: 3}
   mission1Button: {fileID: 1881786813}
   mission2Button: {fileID: 1722550667}
   mission3Button: {fileID: 1223760824}

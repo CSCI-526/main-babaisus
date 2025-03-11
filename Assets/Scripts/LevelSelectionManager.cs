@@ -18,6 +18,8 @@ public class LevelSelectionManager : MonoBehaviour
     public static string[] levelPrefix = {"NEW Level ", "Tutorial Level "};
     public static int currentLevel;
 
+    public static int currentDatalevel;
+
     public static bool ShowLevelSelector = false;
     public static int[] mainRestartCounter= new int[50]; // Array of restart counters for each mission
 

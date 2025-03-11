@@ -29,12 +29,12 @@ public class SendToGoogle : MonoBehaviour
         public void Send()
     {
         // Assign variables
-        _currentLevel = (LevelSelectionManager.currentLevel)-1;
+        _currentLevel = (LevelSelectionManager.currentDatalevel)-1;
         _platMoveTime = 0;
         _lastMoveTime = 0;
         _completeLevel = false;
-        Debug.Log("trying to access" + (LevelSelectionManager.currentLevel-1));
-        _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1];
+        Debug.Log("trying to access" + (LevelSelectionManager.currentDatalevel-1));
+        _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1];
         _noStars = GameOverManager.starForLevel;
 
 

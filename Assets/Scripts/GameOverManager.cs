@@ -54,10 +54,11 @@ public class GameOverManager : MonoBehaviour
     public void LoadNextLevel() {
         Time.timeScale = 1f;
         LevelSelectionManager.currentLevel += 1;
+        LevelSelectionManager.currentDatalevel += 1;
         Debug.Log("next level: " + LevelSelectionManager.currentLevel.ToString());
 
-        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]=PauseMenu.restartCounter;
-        Debug.Log("google restart value: " + LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]);
+        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1]=PauseMenu.restartCounter;
+        Debug.Log("google restart value: " + LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1]);
         PauseMenu.restartCounter=0;
 
         int currentType = LevelSelectionManager.type;

@@ -47,6 +47,11 @@ public class LevelSelector : MonoBehaviour
     }
 
     public void onSelectLevel () {
+        if(LevelSelectionManager.type == 1) {
+            LevelSelectionManager.currentDatalevel = actualLevel + 25;
+        } else {
+            LevelSelectionManager.currentDatalevel = actualLevel;
+        }
         LevelSelectionManager.currentLevel = actualLevel;
         Debug.Log("current select: " + LevelSelectionManager.currentLevel);
         PauseMenu.restartCounter = 0;
