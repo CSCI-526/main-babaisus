@@ -9,35 +9,35 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/MainMenu.unity
     guid: 6dbf44efbffbd4325880f24ad9340176
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Horizontal/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission1 Horizontal/Tutorial
       Level 1.unity
     guid: 5dcbd2cd7617f4a65a6bc6f94c042509
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Horizontal/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission1 Horizontal/Tutorial
       Level 2.unity
     guid: 9fbc0f029366e40ba9a5e0ee8561f285
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Vertical/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission2 Vertical/Tutorial
       Level 3.unity
     guid: 8082a1b1369ca4d20beb84a667ada189
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Vertical/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission2 Vertical/Tutorial
       Level 4.unity
     guid: 00061e62dc7b6426d9428398fcff0e97
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Transperent/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission3 Transperent/Tutorial
       Level 5.unity
     guid: 1f3c2666f8ffb4946b5c104f53ee3d61
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Transperent/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission3 Transperent/Tutorial
       Level 6.unity
     guid: 479ff07dd2724492694a887a723521c3
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Rotation/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission4 Rotation/Tutorial
       Level 7.unity
     guid: c40f9ea9f673d46d88bfb615712b59c7
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Rotation/Tutorial
+    path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission4 Rotation/Tutorial
       Level 8.unity
     guid: f57b25f8ce6f344db8487b6782c9795d
   - enabled: 1
