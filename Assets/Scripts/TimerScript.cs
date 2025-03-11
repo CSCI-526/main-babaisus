@@ -85,7 +85,8 @@ public class TimerScript : MonoBehaviour
         
         int f = (int)(timeElapsed * 100);
         float floatF = f/100.0f;
-        textMP.text = $"Headstart Time: {floatF}";
+
+        textMP.text = $"{floatF}";
     }
 
     public int GetStarCount() {
