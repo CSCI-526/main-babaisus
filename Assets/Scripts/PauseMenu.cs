@@ -27,8 +27,9 @@ public class PauseMenu : MonoBehaviour
     public void BackToHome(int sceneID) {
         Time.timeScale = 1f;
         LevelSelectionManager.currentLevel += 1;// for restart counter
+        LevelSelectionManager.currentDatalevel += 1;
 
-        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentLevel-1]=PauseMenu.restartCounter;
+        LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1]=PauseMenu.restartCounter;
         PauseMenu.restartCounter=0;
         
         LevelSelectionManager.ShowLevelSelector = true; 

@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New Levels/MainMenu.unity
     guid: 6dbf44efbffbd4325880f24ad9340176
-  - enabled: 0
-    path: Assets/Scenes/New Levels/MissionScene.unity
-    guid: ddd5cad750dfc4577a08ddf27a60d151
   - enabled: 1
     path: Assets/Scenes/New Levels/Tutorial Levels/Mini Mission Horizontal/Tutorial
       Level 1.unity
