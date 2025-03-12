@@ -2628,6 +2628,10 @@ PrefabInstance:
       propertyPath: spaceButton
       value: 
       objectReference: {fileID: 1318956505}
+    - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: isTutorialLevel1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7206251084216432822, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 770.0972
