@@ -27,6 +27,8 @@ public class TimerScript : MonoBehaviour
     private bool penaltyMiddleGiven = false;
     private bool penaltyLeftGiven = false;
     private int starCount;
+
+    public GameObject spaceButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +89,9 @@ public class TimerScript : MonoBehaviour
         float floatF = f/100.0f;
 
         textMP.text = $"{floatF}";
+        if (floatF> 5.0f){
+            spaceButton.SetActive(true);
+        }
     }
 
     public int GetStarCount() {

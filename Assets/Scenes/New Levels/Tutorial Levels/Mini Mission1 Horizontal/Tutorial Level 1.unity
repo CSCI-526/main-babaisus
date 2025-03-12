@@ -1570,7 +1570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1318956506
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2668,6 +2668,10 @@ PrefabInstance:
       propertyPath: circle
       value: 
       objectReference: {fileID: 737853493}
+    - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: spaceButton
+      value: 
+      objectReference: {fileID: 1318956505}
     - target: {fileID: 7206251084216432822, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 770.0972
