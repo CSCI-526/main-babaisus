@@ -51,7 +51,7 @@ public class TimerScript : MonoBehaviour
                     circle.GetComponent<BallMove>().Begin();
                 }
                 else if(circle2 != null){
-                    circle2.GetComponent<BallMoveWithPlatform>().Begin();
+                    circle2.GetComponent<BallMoveWithStickyPlatformPurple>().Begin();
                 }
             }
         }
