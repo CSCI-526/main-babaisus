@@ -91,7 +91,7 @@ public class TimerScript : MonoBehaviour
 
         textMP.text = $"{floatF}";
         if (isTutorialLevel1==true){
-            if (floatF> cutoffRight){
+            if (floatF> 3.5f){
             spaceButton.SetActive(true);
             }
         }
