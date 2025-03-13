@@ -14,7 +14,6 @@ public class TimerBar : MonoBehaviour
     void Start()
     {
         timeLimit=leftStar.GetComponent<StarText>().cutoff;
-        Debug.Log(timeLimit);
         
     }
 
