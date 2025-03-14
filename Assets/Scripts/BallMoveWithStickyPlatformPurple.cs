@@ -20,6 +20,7 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
     private float ballRotationOffset;
     private bool isBallStuck = false;
     private Vector2 collisionNormal;
+    private Vector2 ballOffsetLocal;
 
     void Start()
     {
@@ -55,6 +56,8 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
             ballOffset = (Vector2)ballTransform.position - contact.point;
             ballRotationOffset = platform.transform.rotation.eulerAngles.z;
 
+            ballOffsetLocal = platform.transform.InverseTransformPoint(contact.point);
+
             isBallStuck = true;
 
             PauseBallMovement();
@@ -79,13 +82,17 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
             if (isPaused)
             {
                 Vector3 platformPosition = platform.transform.position;
-                Quaternion platformRotation = platform.transform.rotation;
 
-                Vector3 offset3D = new Vector3(ballOffset.x, ballOffset.y, 0f);
+                Vector3 offsetWorld = platform.transform.TransformPoint(ballOffsetLocal);
+                ballTransform.position = offsetWorld;
+                
+                // Quaternion platformRotation = platform.transform.rotation;
 
-                Vector3 rotatedOffset = platformRotation * offset3D;
+                // Vector3 offset3D = new Vector3(ballOffset.x, ballOffset.y, 0f);
 
-                ballTransform.position = platformPosition + rotatedOffset;
+                // Vector3 rotatedOffset = platformRotation * offset3D;
+
+                // ballTransform.position = platformPosition + rotatedOffset;
 
                 PauseTimerUpdate();
             }
