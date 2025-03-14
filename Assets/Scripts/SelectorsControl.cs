@@ -12,10 +12,11 @@ public class SelectorsControl : MonoBehaviour
         int currentType = LevelSelectionManager.type;
         int mission = LevelSelectionManager.mission;
         // Mission G only has 2 levels rn Mar 14
-        if(currentType == 0 && mission == 7) {
-            thirdSelector.SetActive(false);
-        } else {
-            thirdSelector.SetActive(true);
-        }
+        // if(currentType == 0 && mission == 7) {
+        //     thirdSelector.SetActive(false);
+        // } else {
+        //     thirdSelector.SetActive(true);
+        // }
+        thirdSelector.SetActive(true);
     }
 }

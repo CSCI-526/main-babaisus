@@ -81,6 +81,9 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/Main Mission G/NEW Level 27.unity
     guid: 99cba4dcf424846e0a69b3a32d4e3912
   - enabled: 1
+    path: Assets/Scenes/New Levels/Main Mission G/NEW Level 28.unity
+    guid: 79a8d65fd5a30494bbfbe8e5660cc9f8
+  - enabled: 1
     path: Assets/Scenes/New Levels/Expert Missions/Expert Mission Z/NEW Level 5.unity
     guid: a4ff1272e4f10452ba52f8c74d542248
   - enabled: 1

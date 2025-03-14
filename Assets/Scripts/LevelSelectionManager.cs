@@ -26,7 +26,7 @@ public class LevelSelectionManager : MonoBehaviour
 
     // tutorial useless in Mar 13 version
     public static int[] tutorialLevelIndex = {1, 3, 5, 7, 9};
-    public static int[] mainLevelIndex = {1, 4, 7, 10, 13, 16, 19, 21};
+    public static int[] mainLevelIndex = {1, 4, 7, 10, 13, 16, 19, 22, 25};
     public static int[] expertLevelIndex = {1, 4, 7, 10, 13};
 
     public static int[] getLevelIndexes() {

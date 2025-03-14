@@ -35,7 +35,7 @@ public class GameOverManager : MonoBehaviour
         gamePassUI.SetActive(true);
 
         var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 4;
-        var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 20;
+        var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 21;
         var expertCompleted = LevelSelectionManager.type == 2 && LevelSelectionManager.currentLevel == 6;
 
         if(tutorialCompleted || mainCompleted || expertCompleted) {

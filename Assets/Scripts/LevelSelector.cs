@@ -86,8 +86,8 @@ public class LevelSelector : MonoBehaviour
             // main starts with 5
             sceneId = 4 + actualLevel;
         } else {
-            // expert starts with 23
-            sceneId = 22 + actualLevel;
+            // expert starts with 26
+            sceneId = 25 + actualLevel;
         }
         SceneManager.LoadScene(sceneId);
     }
