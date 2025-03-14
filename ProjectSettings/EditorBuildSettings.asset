@@ -21,22 +21,22 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/Tutorial Levels/New Tutorial Level 4.unity
     guid: 4481e66e4e07842a1be9f3dde54ce808
   - enabled: 1
-    path: Assets/Scenes/New Levels/GamePlay Mission 1/NEW Level 1.unity
+    path: Assets/Scenes/New Levels/Main Mission A/NEW Level 1.unity
     guid: dc80c5fd4935642da98a78c16c01a02a
   - enabled: 1
-    path: Assets/Scenes/New Levels/GamePlay Mission 1/NEW Level 2.unity
+    path: Assets/Scenes/New Levels/Main Mission A/NEW Level 2.unity
     guid: 4fdaf053d2878442e97c594bde08fab9
   - enabled: 1
-    path: Assets/Scenes/New Levels/GamePlay Mission 1/NEW Level 3.unity
+    path: Assets/Scenes/New Levels/Main Mission A/NEW Level 3.unity
     guid: 53202b328428f46c2af11abbe9ae0b55
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach4 Rotation/NEW Level 4.unity
+    path: Assets/Scenes/New Levels/Main Mission B/NEW Level 4.unity
     guid: b4dd1bb482a0840429d88ab107fe4332
   - enabled: 1
     path: Assets/Scenes/New Levels/Expert Missions/NEW Level 5.unity
     guid: a4ff1272e4f10452ba52f8c74d542248
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach5 SpikesAttached/NEW Level 6.unity
+    path: Assets/Scenes/New Levels/Main Mission D/NEW Level 6.unity
     guid: 7c326ee0c8657442eb9953530b8bdf1c
   - enabled: 1
     path: Assets/Scenes/New Levels/Expert Missions/NEW Level 7.unity
@@ -45,19 +45,19 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/Expert Missions/NEW Level 8.unity
     guid: a551634af09c24592a36dad36ac5ae42
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 9.unity
+    path: Assets/Scenes/New Levels/Main Mission C/NEW Level 9.unity
     guid: 4cb864809d958480395664f9f6dd3a99
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 10.unity
+    path: Assets/Scenes/New Levels/Main Mission C/NEW Level 10.unity
     guid: f6ce20e0e99414f9986c8caec83328b5
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach6 JumpCubes/NEW Level 11.unity
+    path: Assets/Scenes/New Levels/Main Mission C/NEW Level 11.unity
     guid: 3641852d398f44a56b19d14424649aea
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach7 MoveFlag/NEW Level 12.unity
+    path: Assets/Scenes/New Levels/Main Mission D/NEW Level 12.unity
     guid: 612a2878843034b8b8a8d678ba4573f0
   - enabled: 1
-    path: Assets/Scenes/New Levels/Teach7 MoveFlag/NEW Level 13.unity
+    path: Assets/Scenes/New Levels/Main Mission D/NEW Level 13.unity
     guid: 501b17e327440410e8ec9a58016cc7a1
   - enabled: 1
     path: Assets/Scenes/New Levels/Expert Missions/NEW Level 14.unity
