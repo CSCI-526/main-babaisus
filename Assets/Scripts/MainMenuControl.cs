@@ -17,6 +17,10 @@ public class MainMenuControl : MonoBehaviour
     public GameObject tutorialPanel;
     public GameObject tutorialMissionPanel;
     public GameObject panelForTutorial;
+    // type = 2, play 
+    public GameObject expertPanel;
+    public GameObject expertMissionPanel;
+    public GameObject panelForExpert;
     // // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +30,17 @@ public class MainMenuControl : MonoBehaviour
                 levelPanel.SetActive(true);
                 missionPanel.SetActive(false);
                 panelForPlay.SetActive(true);
-            } else {
+            } else if(LevelSelectionManager.type == 2) {
+                // back to expert panel
+                expertPanel.SetActive(true);
+                expertMissionPanel.SetActive(false);
+                panelForExpert.SetActive(true);
+            }
+            else {
                 // back to tutorial panel
                 tutorialPanel.SetActive(true);
-                tutorialMissionPanel.SetActive(false);
-                panelForTutorial.SetActive(true);
+                tutorialMissionPanel.SetActive(true);
+                // panelForTutorial.SetActive(true);
             }
             
             menuButton.SetActive(false);
@@ -52,7 +62,11 @@ public class MainMenuControl : MonoBehaviour
         LevelSelectionManager.type = 1;
     }
 
-    public void onClickPlayButton() {
+    public void onClickMainButton() {
         LevelSelectionManager.type = 0;
+    }
+
+    public void onClickExpertButton() {
+        LevelSelectionManager.type = 2;
     }
 }

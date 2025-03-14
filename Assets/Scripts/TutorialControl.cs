@@ -15,7 +15,7 @@ public class TutorialControl : MonoBehaviour
     public GameObject mission4Button;
 
     void OnEnable() {
-        int index = LevelSelectionManager.mission - 1;
+        int index = LevelSelectionManager.currentDatalevel - 25 - 1;
         if(index >=0 && index < sprites.Count) {
             imageComponent.sprite = sprites[index];
         }
@@ -23,7 +23,7 @@ public class TutorialControl : MonoBehaviour
     }
 
     private void spawnButton () {
-        int currentMission = LevelSelectionManager.mission;
+        int currentMission = LevelSelectionManager.currentDatalevel - 25;
         mission1Button.SetActive(currentMission == 1);
         mission2Button.SetActive(currentMission == 2);
         mission3Button.SetActive(currentMission == 3);

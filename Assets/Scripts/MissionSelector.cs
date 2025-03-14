@@ -17,7 +17,11 @@ public class MissionSelector : MonoBehaviour
 
     private char GetMissionLetter(int number) {
         if (number >= 1 && number <= 26) {
-            return (char)('A' + number - 1);
+            if(LevelSelectionManager.type == 0) {
+                return (char)('A' + number - 1);
+            } else {
+             return (char)('Z' - number + 1);
+            }
         }
         return '?'; 
     }

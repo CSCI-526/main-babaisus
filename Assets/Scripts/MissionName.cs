@@ -11,8 +11,8 @@ public class MissionName : MonoBehaviour
     public void OnEnable() {
         if(LevelSelectionManager.type == 0) {
             missionName.text = LevelSelectionManager.missionNames[LevelSelectionManager.mission - 1];
-        } else {
-            missionName.text = LevelSelectionManager.babyMissionNames[LevelSelectionManager.mission - 1];
+        } else if(LevelSelectionManager.type == 2) {
+            missionName.text = LevelSelectionManager.expertNames[LevelSelectionManager.mission - 1];
         }
         
     }

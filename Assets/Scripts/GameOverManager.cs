@@ -34,10 +34,11 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 0f;
         gamePassUI.SetActive(true);
 
-        var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 8;
-        var generalCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 14;
+        var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 4;
+        var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 18;
+        var expertCompleted = LevelSelectionManager.type == 2 && LevelSelectionManager.currentLevel == 6;
 
-        if(tutorialCompleted || generalCompleted) {
+        if(tutorialCompleted || mainCompleted || expertCompleted) {
             nextButton.SetActive(false);
             passText.text = "You Completed!";
         }
@@ -63,30 +64,27 @@ public class GameOverManager : MonoBehaviour
 
         int currentType = LevelSelectionManager.type;
         int numberOfMission = LevelSelectionManager.type == 0 ? 3 : 2;
-        if(currentType == 1) {
-            // tutorial
-            if(LevelSelectionManager.currentLevel % numberOfMission == 1) {
-                LevelSelectionManager.mission += 1;
-            }
-        } else {
-            // general mission
+        if(currentType != 1) {
+            // main/expert mission
             switch(LevelSelectionManager.currentLevel) {
                 case 4:
-                case 6:
-                case 9:
-                case 12:
+                case 7:
+                case 10:
+                case 13:
+                case 16:
                     LevelSelectionManager.mission += 1;
                     break;
                 default:
                     break;
             }
         }
-        if(currentType == 1 && LevelSelectionManager.currentLevel % numberOfMission == 1) {
-            // load tutorial graphic for level 1 
+        if(currentType == 1) {
+            // load tutorial graphic for tutorial level
             SceneManager.LoadScene("TutorialPicScene");
         } else {
             Debug.Log("======= load next: " + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
-            SceneManager.LoadScene(LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
+            // SceneManager.LoadScene(LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

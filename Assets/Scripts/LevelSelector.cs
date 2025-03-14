@@ -26,13 +26,22 @@ public class LevelSelector : MonoBehaviour
 
     private void OnEnable() {
         int currentType = LevelSelectionManager.type;
-        int numberOfMission = currentType == 0 ? 3 : 2;
-        if(currentType == 0 && LevelSelectionManager.mission >= 3) {
-            actualLevel = 5 + (LevelSelectionManager.mission - 3) * numberOfMission + levelInMission;
+        if(currentType == 1) {
+            // tutorial level 1-4
+            levelText.text = "Level " + levelInMission.ToString();
+            actualLevel = levelInMission;
         } else {
-            actualLevel = (LevelSelectionManager.mission - 1) * numberOfMission + levelInMission;
+            // int numberOfMission = 3;
+            // if(currentType == 0 && LevelSelectionManager.mission >= 3) {
+            //     actualLevel = 5 + (LevelSelectionManager.mission - 3) * numberOfMission + levelInMission;
+            // } else {
+            //     actualLevel = (LevelSelectionManager.mission - 1) * numberOfMission + levelInMission;
+            // }
+            int[] indexes = LevelSelectionManager.getLevelIndexes();
+            actualLevel = indexes[LevelSelectionManager.mission - 1] + levelInMission - 1;
+            Debug.Log("Actual level: " + actualLevel.ToString());
+            levelText.text = actualLevel.ToString();
         }
-        levelText.text = actualLevel.ToString();
         int starCount = PlayerPrefs.GetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + actualLevel.ToString(), 0);
         // Debug.Log("star count: " + starCount);
         SpawnStar(starCount);
@@ -49,14 +58,16 @@ public class LevelSelector : MonoBehaviour
     public void onSelectLevel () {
         if(LevelSelectionManager.type == 1) {
             LevelSelectionManager.currentDatalevel = actualLevel + 25;
-        } else {
+        } else if(LevelSelectionManager.type == 0) {
             LevelSelectionManager.currentDatalevel = actualLevel;
+        } else {
+            LevelSelectionManager.currentDatalevel = actualLevel + 35;
         }
         LevelSelectionManager.currentLevel = actualLevel;
         Debug.Log("current select: " + LevelSelectionManager.currentLevel);
         PauseMenu.restartCounter = 0;
 
-        if(LevelSelectionManager.type == 1 && levelInMission == 1) {
+        if(LevelSelectionManager.type == 1) {
             // for level 1s for each baby mission
             // show tutorial image -> press button -> play / go back
             SceneManager.LoadScene("TutorialPicScene");
@@ -71,12 +82,12 @@ public class LevelSelector : MonoBehaviour
         
         // Maybe it's better to load by SceneId
         int sceneId = 0; // MainMenu scene backup
-        if(currentType == 1) {
-            // tutorial starts with 2
-            sceneId = actualLevel;
+        if(currentType == 0) {
+            // main starts with 5
+            sceneId = 4 + actualLevel;
         } else {
-            // tutorial starts with 9
-            sceneId = 8 + actualLevel;
+            // expert starts with 23
+            sceneId = 22 + actualLevel;
         }
         SceneManager.LoadScene(sceneId);
     }
