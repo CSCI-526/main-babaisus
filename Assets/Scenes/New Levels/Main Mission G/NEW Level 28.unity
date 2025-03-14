@@ -458,6 +458,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
+--- !u!1 &574597606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7406464746586717015, guid: d564a4f220673408daadaabce4ed87f2, type: 3}
+  m_PrefabInstance: {fileID: 206777532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &678422813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +611,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
   m_PrefabInstance: {fileID: 1805353803}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &737853499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737853493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e16779685f7642bb9097c64e5e76810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  platform: {fileID: 574597606}
+  pauseDuration: 2
 --- !u!1001 &1355871841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,6 +656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: circle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: circle2
       value: 
       objectReference: {fileID: 737853493}
     - target: {fileID: 6238558519461051615, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
@@ -853,6 +877,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6721306517990004878, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_Name
       value: Circle
@@ -860,7 +888,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 737853499}
   m_SourcePrefab: {fileID: 100100000, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
 --- !u!1001 &1849611580
 PrefabInstance:
