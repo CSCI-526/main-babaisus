@@ -30,6 +30,10 @@ public class TimerScript : MonoBehaviour
     public bool isTutorialLevel1 = false;
     public GameObject spaceButton;
 
+    //new, for changing to countdown
+
+    //private float countDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +42,11 @@ public class TimerScript : MonoBehaviour
         cutoffRight = StarRight.GetComponent<StarText>().cutoff; //Variables.Object(StarRight).Get("cutoff");
         cutoffMiddle = StarMiddle.GetComponent<StarText>().cutoff;
         cutoffLeft = StarLeft.GetComponent<StarText>().cutoff;
+        //countDown = cutoffRight;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!timerDone){
             if (Input.GetKey(KeyCode.Space)){
@@ -66,6 +71,7 @@ public class TimerScript : MonoBehaviour
         }
 
         if (timerStarted && !timerDone){
+            //countDown -= Time.deltaTime;
             timeElapsed += Time.deltaTime;
             if (timeElapsed >= cutoffRight && !penaltyRightGiven){
                 PenaltyRight.SetActive(true);
