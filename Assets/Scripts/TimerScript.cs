@@ -106,4 +106,10 @@ public class TimerScript : MonoBehaviour
     public int GetStarCount() {
         return starCount;
     }
+
+    public float GetSpentTime() {
+        int f = (int)(timeElapsed * 100);
+        float floatF = f/100.0f;
+        return floatF;
+    }
 }
