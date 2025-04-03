@@ -15,6 +15,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject allGrid;
     public GameObject nextButton;
     public TextMeshProUGUI passText;
+    public TextMeshProUGUI timeText;
     
 
     public TimerScript timer;
@@ -33,6 +34,9 @@ public class GameOverManager : MonoBehaviour
         timer = FindObjectOfType<TimerScript>();
         Time.timeScale = 0f;
         gamePassUI.SetActive(true);
+
+        var passTime = timer.GetSpentTime();
+        timeText.text = $"Time spent before ball drop: {passTime} seconds";
 
         var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 4;
         var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 21;
