@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 2071840582}
   - component: {fileID: 2071840583}
   m_Layer: 0
-  m_Name: LevelHint
+  m_Name: LevelHint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
