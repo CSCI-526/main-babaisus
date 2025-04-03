@@ -16,6 +16,7 @@ public class SendToGoogle : MonoBehaviour
     private int _levelClearTries;
     private int _noStars;
     private int _currentLevel;
+    private List<Vector2> _ballTrajectory;
     //WinLoadNext winLoadNext;
     // Start is called before the first frame update
     private void Awake()
@@ -36,6 +37,8 @@ public class SendToGoogle : MonoBehaviour
         Debug.Log("trying to access" + (LevelSelectionManager.currentDatalevel-1));
         _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1];
         _noStars = GameOverManager.starForLevel;
+        _ballTrajectory = BallMove.GetPositions();
+
 
 
 
@@ -54,11 +57,13 @@ public class SendToGoogle : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("entry.384308309", sessionID);
         form.AddField("entry.1686750853", platMoveTime);
+        form.AddField("entry.1512156387", string.Join(",", _ballTrajectory));
         form.AddField("entry.877042479", lastMoveTime);
         form.AddField("entry.1544985288", completeLevel);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
         form.AddField("entry.1116312316", currentLevel);
+        
         
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
