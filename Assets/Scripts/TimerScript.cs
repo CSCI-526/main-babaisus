@@ -10,6 +10,9 @@ public class TimerScript : MonoBehaviour
     public GameObject StarRight;
     public GameObject StarMiddle;
     public GameObject StarLeft;
+
+    public GameObject starBar;
+
     public GameObject PenaltyRight;
     public GameObject PenaltyMiddle;
     public GameObject PenaltyLeft;
@@ -32,17 +35,24 @@ public class TimerScript : MonoBehaviour
 
     //new, for changing to countdown
 
-    //private float countDown;
+    public float startCountDown = 20.0f;
+    private float countDown;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         timeElapsed = 0.0f;
         starCount = 3;
-        cutoffRight = StarRight.GetComponent<StarText>().cutoff; //Variables.Object(StarRight).Get("cutoff");
-        cutoffMiddle = StarMiddle.GetComponent<StarText>().cutoff;
-        cutoffLeft = StarLeft.GetComponent<StarText>().cutoff;
+        // cutoffRight = StarRight.GetComponent<StarText>().cutoff; //Variables.Object(StarRight).Get("cutoff");
+        // cutoffMiddle = StarMiddle.GetComponent<StarText>().cutoff;
+        // cutoffLeft = StarLeft.GetComponent<StarText>().cutoff;
         //countDown = cutoffRight;
+
+        countDown = startCountDown;
+        cutoffRight = (float) Variables.Object(starBar).Get("mostTime");
+        cutoffMiddle = (float) Variables.Object(starBar).Get("mediumTime");
+        cutoffLeft = (float) Variables.Object(starBar).Get("leastTime");
     }
 
     // Update is called once per frame
@@ -71,34 +81,64 @@ public class TimerScript : MonoBehaviour
         }
 
         if (timerStarted && !timerDone){
-            //countDown -= Time.deltaTime;
+            countDown -= Time.deltaTime;
             timeElapsed += Time.deltaTime;
-            if (timeElapsed >= cutoffRight && !penaltyRightGiven){
+            // if (timeElapsed >= cutoffRight && !penaltyRightGiven){
+            //     PenaltyRight.SetActive(true);
+            //     penaltyRightGiven = true;
+            //     starCount -= 1;
+            // }
+            // if (timeElapsed >= cutoffMiddle && !penaltyMiddleGiven){
+            //     PenaltyMiddle.SetActive(true);
+            //     starCount -= 1;
+            //     penaltyMiddleGiven = true;
+            // }
+            // if (timeElapsed >= cutoffLeft && !penaltyLeftGiven){
+            //     PenaltyLeft.SetActive(true);
+            //     penaltyLeftGiven = true;
+            //     starCount -= 1;
+            // }
+
+            if (countDown <= cutoffRight && !penaltyRightGiven){
                 PenaltyRight.SetActive(true);
                 penaltyRightGiven = true;
                 starCount -= 1;
             }
-            if (timeElapsed >= cutoffMiddle && !penaltyMiddleGiven){
+            if (countDown <= cutoffMiddle && !penaltyMiddleGiven){
                 PenaltyMiddle.SetActive(true);
-                starCount -= 1;
                 penaltyMiddleGiven = true;
-            }
-            if (timeElapsed >= cutoffLeft && !penaltyLeftGiven){
-                PenaltyLeft.SetActive(true);
-                penaltyLeftGiven = true;
                 starCount -= 1;
+            }
+            if (countDown <= cutoffLeft && !penaltyLeftGiven){
+                // PenaltyLeft.SetActive(true);
+                penaltyLeftGiven = true;
+                // starCount -= 1;
+                // Debug.Log("Start ball");
+                countDown = 0.0f;
+                timeElapsed = startCountDown;
+                timerDone = true;
+                if(circle != null){
+                    circle.GetComponent<BallMove>().Begin();
+                }
+                else if(circle2 != null){
+                    circle2.GetComponent<BallMoveWithStickyPlatformPurple>().Begin();
+                }
             }
             //if > star, activate cross out
         }
 
         
-        int f = (int)(timeElapsed * 100);
+        //int f = (int)(timeElapsed * 100);
+        int f = (int)(countDown * 100);
         float floatF = f/100.0f;
 
         textMP.text = $"{floatF}";
         if (isTutorialLevel==true){
-            if (floatF> (cutoffRight+0.5f)){
-            spaceButton.SetActive(true);
+            // if (floatF> (cutoffRight+0.5f)){
+            // spaceButton.SetActive(true);
+            // }
+            if (floatF < (cutoffRight - 0.5f)){
+                spaceButton.SetActive(true);
             }
         }
     }

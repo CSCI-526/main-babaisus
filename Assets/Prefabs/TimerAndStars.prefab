@@ -274,6 +274,7 @@ MonoBehaviour:
   StarRight: {fileID: 7538323942757285815}
   StarMiddle: {fileID: 6906570454634943739}
   StarLeft: {fileID: 5603281059631098104}
+  starBar: {fileID: 2394558088545857645}
   PenaltyRight: {fileID: 729488895911872068}
   PenaltyMiddle: {fileID: 2711912030843006336}
   PenaltyLeft: {fileID: 5261431184341774557}
@@ -281,8 +282,9 @@ MonoBehaviour:
   timerDone: 0
   circle: {fileID: 0}
   circle2: {fileID: 0}
-  isTutorialLevel1: 0
+  isTutorialLevel: 0
   spaceButton: {fileID: 0}
+  countDown: 20
 --- !u!1 &1013897963384404385
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3899784075684231128}
   - component: {fileID: 814703224095978072}
+  - component: {fileID: 242790219658070797}
   m_Layer: 5
   m_Name: StarBar
   m_TagString: Untagged
@@ -798,6 +801,24 @@ MonoBehaviour:
   m_Spacing: {x: 300, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
+--- !u!114 &242790219658070797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394558088545857645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"leastTime","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mediumTime","value":{"$content":10.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mostTime","value":{"$content":15.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &2551282046204205693
 GameObject:
   m_ObjectHideFlags: 0

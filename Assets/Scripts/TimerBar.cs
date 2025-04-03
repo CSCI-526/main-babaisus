@@ -10,10 +10,13 @@ public class TimerBar : MonoBehaviour
 
     // Start is called before the first frame update
     public float timeLimit;
-    public GameObject leftStar;
+    // public GameObject leftStar;
+    public GameObject timer;
     void Start()
     {
-        timeLimit=leftStar.GetComponent<StarText>().cutoff;
+        //timeLimit=leftStar.GetComponent<StarText>().cutoff;
+        // timeLimit=rightStar.GetComponent<StarText>().cutoff;
+        timeLimit=timer.GetComponent<TimerScript>().startCountDown;
         
     }
 
@@ -21,6 +24,7 @@ public class TimerBar : MonoBehaviour
     void Update()
     {
         fillImage.fillAmount = 1-(TimerScript.timeElapsed / timeLimit);
+        //fillImage.fillAmount = 1-((TimerScript.startCountDown - TimerScript.countDown) / timeLimit);
         
     }
 }
