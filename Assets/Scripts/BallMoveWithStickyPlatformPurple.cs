@@ -53,8 +53,8 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
             ContactPoint2D contact = collision.contacts[0];  // Get collision contact point
             collisionNormal = contact.normal;  // Store the normal of the surface
 
-            ballOffset = (Vector2)ballTransform.position - contact.point;
-            ballRotationOffset = platform.transform.rotation.eulerAngles.z;
+            // ballOffset = (Vector2)ballTransform.position - contact.point;
+            // ballRotationOffset = platform.transform.rotation.eulerAngles.z;
 
             ballOffsetLocal = platform.transform.InverseTransformPoint(contact.point);
 

@@ -9,6 +9,7 @@ TagManager:
   - WhitePlatform
   - RedPlatform
   - BluePlatform
+  - RightArrow
   layers:
   - Default
   - TransparentFX
