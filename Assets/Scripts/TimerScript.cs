@@ -27,7 +27,7 @@ public class TimerScript : MonoBehaviour
     private bool penaltyMiddleGiven = false;
     private bool penaltyLeftGiven = false;
     private int starCount;
-    public bool isTutorialLevel1 = false;
+    public bool isTutorialLevel = false;
     public GameObject spaceButton;
 
     //new, for changing to countdown
@@ -96,8 +96,8 @@ public class TimerScript : MonoBehaviour
         float floatF = f/100.0f;
 
         textMP.text = $"{floatF}";
-        if (isTutorialLevel1==true){
-            if (floatF> 3.5f){
+        if (isTutorialLevel==true){
+            if (floatF> (cutoffRight+0.5f)){
             spaceButton.SetActive(true);
             }
         }
