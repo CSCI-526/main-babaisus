@@ -34,7 +34,7 @@ public class BallMove : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (gameStarted && elapsedTime > 0.2f){
             positions.Add(rb.position);
-            Debug.Log(rb.position);
+            //Debug.Log(rb.position);
             elapsedTime = 0f;
         }
           

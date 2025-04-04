@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
+using JetBrains.Annotations;
 
 public class SendToGoogle : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SendToGoogle : MonoBehaviour
     [SerializeField] private string URL;
 
     private string _sessionID="";
-    private int _platMoveTime;
+    private List<Vector2> _platTrajectory;
     private int _lastMoveTime;
     private bool _completeLevel;
     private int _levelClearTries;
@@ -31,7 +32,7 @@ public class SendToGoogle : MonoBehaviour
     {
         // Assign variables
         _currentLevel = (LevelSelectionManager.currentDatalevel)-1;
-        _platMoveTime = 0;
+        _platTrajectory =  PlatControl.GetPositions();
         _lastMoveTime = 0;
         _completeLevel = false;
         Debug.Log("trying to access" + (LevelSelectionManager.currentDatalevel-1));
@@ -48,22 +49,23 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), _platMoveTime.ToString(), _lastMoveTime.ToString(), _completeLevel.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString()));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), _completeLevel.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
     }
 
-    private IEnumerator Post(string sessionID, string platMoveTime, string lastMoveTime, string completeLevel, string levelClearTries, string noStars, string currentLevel)
+    private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string completeLevel, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.384308309", sessionID);
-        form.AddField("entry.1686750853", platMoveTime);
-        form.AddField("entry.1512156387", string.Join(",", _ballTrajectory));
+        form.AddField("entry.1686750853", platTrajectory);
+        form.AddField("entry.1512156387", ballTrajectory);
         form.AddField("entry.877042479", lastMoveTime);
         form.AddField("entry.1544985288", completeLevel);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
         form.AddField("entry.1116312316", currentLevel);
-        
+    
+
         
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
