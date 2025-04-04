@@ -491,6 +491,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242790219658070797, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"leastTime","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mediumTime","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mostTime","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
     - target: {fileID: 1540959270126884682, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
       value: 15
@@ -535,6 +542,10 @@ PrefabInstance:
       propertyPath: circle2
       value: 
       objectReference: {fileID: 737853493}
+    - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: startCountDown
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6238558519461051615, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
       value: 2
@@ -553,6 +564,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6271325202732664896, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271325202732664896, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6271325202732664896, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}

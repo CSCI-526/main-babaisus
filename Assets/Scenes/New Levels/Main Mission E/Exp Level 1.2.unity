@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoubleLayerPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4944626770277849363, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6906907638002331314, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.5095625
@@ -499,6 +503,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242790219658070797, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"leastTime","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mediumTime","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mostTime","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
     - target: {fileID: 1540959270126884682, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
       value: 15
@@ -543,6 +554,10 @@ PrefabInstance:
       propertyPath: circle2
       value: 
       objectReference: {fileID: 737853493}
+    - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: startCountDown
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6238558519461051615, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
       value: 2
@@ -687,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e16779685f7642bb9097c64e5e76810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 4
   platform: {fileID: 1741496796}
   pauseDuration: 5
 --- !u!1001 &1318352981
@@ -994,11 +1009,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2275359597253403982, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.235018
+      value: -7.24
       objectReference: {fileID: 0}
     - target: {fileID: 2275359597253403982, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 2275359597253403982, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1039,6 +1054,10 @@ PrefabInstance:
     - target: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830839770907544460, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      propertyPath: tiltSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
