@@ -54,7 +54,7 @@ public class PlatStickyControlPurple : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (gameStarted && elapsedTime > 0.2f){
             positions.Add(rbSticky.position);
-            Debug.Log(rbSticky.position);
+            //Debug.Log(rbSticky.position);
             elapsedTime = 0f;
         }      
     }

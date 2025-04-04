@@ -92,7 +92,7 @@ public class PlatControl : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (gameStarted && elapsedTime > 0.2f){
             positions.Add(rbMoving.position);
-            Debug.Log(rbMoving.position);
+            //Debug.Log(rbMoving.position);
             elapsedTime = 0f;
         }
 
