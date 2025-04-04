@@ -23,6 +23,10 @@ public class BallMove : MonoBehaviour
         //Debug.Log(rb.position);
         positions = new List<Vector2>();
         gameStarted = true;
+        GameObject bucket = transform.GetChild(0).gameObject;
+        bucket.GetComponent<BucketController2D>().TiltBucket();
+        bucket.transform.SetParent(null);
+
     }
 
     void Update()

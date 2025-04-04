@@ -16,6 +16,7 @@ public class BucketController2D : MonoBehaviour
 
     void Start()
     {
+        //transform.SetParent(null);
         if (ball != null)
         {
             ballRb = ball.GetComponent<Rigidbody2D>();
