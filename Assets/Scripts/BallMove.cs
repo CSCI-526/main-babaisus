@@ -29,7 +29,7 @@ public class BallMove : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // rb.velocity = new Vector2(speed, rb.velocity.y - rb.gravityScale*Time.deltaTime);
         if (rb == null)

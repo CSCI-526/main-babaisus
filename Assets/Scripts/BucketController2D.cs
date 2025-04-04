@@ -27,12 +27,12 @@ public class BucketController2D : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (!hasTilted && Input.GetKeyDown(KeyCode.Space))
-        {
-            TiltBucket();
-        }
+        // if (!hasTilted && Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     TiltBucket();
+        // }
     }
 
     void HoldBall()

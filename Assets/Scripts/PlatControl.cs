@@ -19,6 +19,8 @@ public class PlatControl : MonoBehaviour
     private bool gameStarted = false;
     private float elapsedTime = 0f;
     public static List<Vector2> positions; // tracking the positions of the platform
+    
+    private bool circleOverlapping;
 
     // Start is called before the first frame update
     void Start()
@@ -68,17 +70,19 @@ public class PlatControl : MonoBehaviour
             }
             else{
                 if (!playerStill.activeSelf ){
-                    if (switchTimer < 0.0f){
-                        playerStill.SetActive(true);
-                        playerMoving.SetActive(false);
+                    if (!circleOverlapping){
+                        if (switchTimer < 0.0f){
+                            playerStill.SetActive(true);
+                            playerMoving.SetActive(false);
+                        }
                     }
                 }
             }
         }
 
 
-        rbStill.position = rbMoving.position;
-        rbStill.rotation = rbMoving.rotation;
+        // rbStill.position = rbMoving.position;
+        // rbStill.rotation = rbMoving.rotation;
 
         // if (freeze){
         //     return;
@@ -88,6 +92,9 @@ public class PlatControl : MonoBehaviour
         rbMoving.position += movement * Time.deltaTime;
         float rotation = (leftArrow ? angularSpeed : 0) + (rightArrow ? -angularSpeed : 0);
         rbMoving.rotation += rotation * Time.deltaTime;
+
+        rbStill.position = rbMoving.position;
+        rbStill.rotation = rbMoving.rotation;
 
         elapsedTime += Time.deltaTime;
         if (gameStarted && elapsedTime > 0.2f){
@@ -104,6 +111,30 @@ public class PlatControl : MonoBehaviour
     public static List<Vector2> GetPositions()
     {
         return positions;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject maybeCircle = collision.gameObject;
+        if (maybeCircle.CompareTag("Circle")){
+            circleOverlapping = true;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        GameObject maybeCircle = collision.gameObject;
+        if (maybeCircle.CompareTag("Circle")){
+            circleOverlapping = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        GameObject maybeCircle = collision.gameObject;
+        if (maybeCircle.CompareTag("Circle")){
+            circleOverlapping = false;
+        }
     }
 
     // void OnCollisionEnter2D(Collision2D other){
