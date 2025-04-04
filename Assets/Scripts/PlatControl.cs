@@ -16,12 +16,17 @@ public class PlatControl : MonoBehaviour
     // bool freeze = false;
     float origSwitchTimer = 0.35f;
     float switchTimer;
+    private bool gameStarted = false;
+    private float elapsedTime = 0f;
+    public static List<Vector2> positions; // tracking the positions of the platform
+
     // Start is called before the first frame update
     void Start()
     {
         rbStill = playerStill.GetComponent<Rigidbody2D>();
         rbMoving = playerMoving.GetComponent<Rigidbody2D>();
         switchTimer = origSwitchTimer;
+        positions = new List<Vector2>();
     }
 
     // Update is called once per frame
@@ -43,6 +48,12 @@ public class PlatControl : MonoBehaviour
 
         bool leftArrow = Input.GetKey(KeyCode.LeftArrow);
         bool rightArrow = Input.GetKey(KeyCode.RightArrow);
+
+        if (w || a || s || d || leftArrow || rightArrow){
+            gameStarted = true;
+        }
+
+
 
         if (goTransparent){
             if (w||a||s||d||leftArrow||rightArrow){
@@ -78,7 +89,21 @@ public class PlatControl : MonoBehaviour
         float rotation = (leftArrow ? angularSpeed : 0) + (rightArrow ? -angularSpeed : 0);
         rbMoving.rotation += rotation * Time.deltaTime;
 
+        elapsedTime += Time.deltaTime;
+        if (gameStarted && elapsedTime > 0.2f){
+            positions.Add(rbMoving.position);
+            //Debug.Log(rbMoving.position);
+            elapsedTime = 0f;
+        }
+
+
+
         
+    }
+
+    public static List<Vector2> GetPositions()
+    {
+        return positions;
     }
 
     // void OnCollisionEnter2D(Collision2D other){

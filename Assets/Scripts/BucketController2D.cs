@@ -43,7 +43,7 @@ public class BucketController2D : MonoBehaviour
         }
     }
 
-    void TiltBucket()
+    public void TiltBucket()
     {
         if (!hasTilted)
         {
