@@ -967,6 +967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 8830839770907544460, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      propertyPath: tiltAngle
+      value: -70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
