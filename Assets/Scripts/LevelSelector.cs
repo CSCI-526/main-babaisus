@@ -67,13 +67,8 @@ public class LevelSelector : MonoBehaviour
         Debug.Log("current select: " + LevelSelectionManager.currentLevel);
         PauseMenu.restartCounter = 0;
 
-        if(LevelSelectionManager.type == 1) {
-            // for level 1s for each baby mission
-            // show tutorial image -> press button -> play / go back
-            SceneManager.LoadScene("TutorialPicScene");
-        } else {
-            OpenLevelScene();
-        }
+        OpenLevelScene();
+        
     }
 
     public void OpenLevelScene() {
@@ -82,7 +77,10 @@ public class LevelSelector : MonoBehaviour
         
         // Maybe it's better to load by SceneId
         int sceneId = 0; // MainMenu scene backup
-        if(currentType == 0) {
+        if(currentType == 1) {
+            // tutorial 1-4
+            sceneId = actualLevel;
+        } else if(currentType == 0) {
             // main starts with 5
             sceneId = 4 + actualLevel;
         } else {

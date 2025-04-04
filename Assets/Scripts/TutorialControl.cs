@@ -22,6 +22,13 @@ public class TutorialControl : MonoBehaviour
         spawnButton();
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            onClickPlayButton();
+        }
+    }
+
     private void spawnButton () {
         int currentMission = LevelSelectionManager.currentDatalevel - 25;
         mission1Button.SetActive(currentMission == 1);
