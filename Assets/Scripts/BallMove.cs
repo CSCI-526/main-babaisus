@@ -14,6 +14,7 @@ public class BallMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
+        positions = new List<Vector2>();
         // rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
@@ -21,7 +22,7 @@ public class BallMove : MonoBehaviour
         rb.gravityScale = 1.0f;
         rb.velocity = new Vector2(speed, rb.velocity.y);
         //Debug.Log(rb.position);
-        positions = new List<Vector2>();
+        
         gameStarted = true;
         GameObject bucket = transform.GetChild(0).gameObject;
         bucket.GetComponent<BucketController2D>().TiltBucket();

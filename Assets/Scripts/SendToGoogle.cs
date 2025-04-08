@@ -16,8 +16,14 @@ public class SendToGoogle : MonoBehaviour
     private bool _completeLevel;
     private int _levelClearTries;
     private int _noStars;
+
     private int _currentLevel;
     private List<Vector2> _ballTrajectory;
+    public string _gameOutcome;
+    
+
+
+    private List<Vector2> _platTrajectoryList = new List<Vector2>();
     //WinLoadNext winLoadNext;
     // Start is called before the first frame update
     private void Awake()
@@ -28,31 +34,38 @@ public class SendToGoogle : MonoBehaviour
 
     }
 
+    public void Outcome(string gameOutcome)
+    {
+       
+        _gameOutcome = gameOutcome;
+        //Debug.Log("Set Game Outcome: " + _gameOutcome);
+        
+       
+    }
+
         public void Send()
     {
+       // Debug.Log("CALLING SEND");
         // Assign variables
         _currentLevel = (LevelSelectionManager.currentDatalevel)-1;
         _platTrajectory =  PlatControl.GetPositions();
         _lastMoveTime = 0;
-        _completeLevel = false;
-        Debug.Log("trying to access" + (LevelSelectionManager.currentDatalevel-1));
+        
+   
         _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1];
         _noStars = GameOverManager.starForLevel;
         _ballTrajectory = BallMove.GetPositions();
+        Debug.Log("Game Outcome: " + _gameOutcome);
 
 
 
 
-        Debug.Log("Level Clear Tries: " + _levelClearTries);
-        Debug.Log("Current level" + _currentLevel);
 
 
-
-
-        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), _completeLevel.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), _gameOutcome.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
     }
 
-    private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string completeLevel, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
+    private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
@@ -60,7 +73,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1686750853", platTrajectory);
         form.AddField("entry.1512156387", ballTrajectory);
         form.AddField("entry.877042479", lastMoveTime);
-        form.AddField("entry.1544985288", completeLevel);
+        form.AddField("entry.1544985288", gameOutcome);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
         form.AddField("entry.1116312316", currentLevel);
