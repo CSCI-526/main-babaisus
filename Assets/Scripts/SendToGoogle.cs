@@ -16,14 +16,15 @@ public class SendToGoogle : MonoBehaviour
     private bool _completeLevel;
     private int _levelClearTries;
     private int _noStars;
+    
 
     private int _currentLevel;
     private List<Vector2> _ballTrajectory;
     public string _gameOutcome;
-    
 
 
-    private List<Vector2> _platTrajectoryList = new List<Vector2>();
+
+
     //WinLoadNext winLoadNext;
     // Start is called before the first frame update
     private void Awake()
@@ -34,12 +35,16 @@ public class SendToGoogle : MonoBehaviour
 
     }
 
-    public void Outcome(string gameOutcome)
+    public static void Outcome(string gameOutcome)
     {
        
-        _gameOutcome = gameOutcome;
-        //Debug.Log("Set Game Outcome: " + _gameOutcome);
-        
+       
+        LevelSelectionManager.gameOutcomeList.Add(gameOutcome);
+        if ((gameOutcome.Contains("Lose") || gameOutcome.Contains("Exit")) || gameOutcome == "Restart")
+        {
+            LevelSelectionManager.noStarsList.Add(0);
+        }
+        else{LevelSelectionManager.noStarsList.Add(GameOverManager.starForLevel);}
        
     }
 
@@ -52,17 +57,19 @@ public class SendToGoogle : MonoBehaviour
         _lastMoveTime = 0;
         
    
-        _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1];
-        _noStars = GameOverManager.starForLevel;
+        _levelClearTries = (LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1])+1;
+       // _noStars = GameOverManager.starForLevel;
         _ballTrajectory = BallMove.GetPositions();
-        Debug.Log("Game Outcome: " + _gameOutcome);
+        
 
 
 
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), _gameOutcome.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
+        LevelSelectionManager.gameOutcomeList= new List<string>();
+        LevelSelectionManager.noStarsList= new List<int>();
     }
 
     private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
