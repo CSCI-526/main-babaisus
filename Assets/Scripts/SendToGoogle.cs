@@ -11,7 +11,7 @@ public class SendToGoogle : MonoBehaviour
     [SerializeField] private string URL;
 
     private string _sessionID="";
-    private List<Vector2> _platTrajectory;
+    private static List<Vector2> _platTrajectory;
     private int _lastMoveTime;
     private bool _completeLevel;
     private int _levelClearTries;
@@ -19,7 +19,7 @@ public class SendToGoogle : MonoBehaviour
     
 
     private int _currentLevel;
-    private List<Vector2> _ballTrajectory;
+    private static List<Vector2> _ballTrajectory;
     public string _gameOutcome;
 
 
@@ -45,6 +45,11 @@ public class SendToGoogle : MonoBehaviour
             LevelSelectionManager.noStarsList.Add(0);
         }
         else{LevelSelectionManager.noStarsList.Add(GameOverManager.starForLevel);}
+        _platTrajectory = PlatControl.GetPositions();
+        LevelSelectionManager.platTrajectoryList.Add(string.Join(",", _platTrajectory));
+
+        _ballTrajectory = BallMove.GetPositions();
+        LevelSelectionManager.ballTrajectoryList.Add(string.Join(",", _ballTrajectory));
        
     }
 
@@ -67,9 +72,11 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), _lastMoveTime.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
         LevelSelectionManager.gameOutcomeList= new List<string>();
         LevelSelectionManager.noStarsList= new List<int>();
+        LevelSelectionManager.platTrajectoryList= new List<string>();
+        LevelSelectionManager.ballTrajectoryList= new List<string>();
     }
 
     private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)

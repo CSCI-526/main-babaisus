@@ -32,6 +32,8 @@ public class LevelSelectionManager : MonoBehaviour
     //analytics MAIN lists
     public static List<int> noStarsList= new List<int>();
     public static List<string> gameOutcomeList = new List<string>();
+    public static List<string> ballTrajectoryList = new List<string>();
+    public static List<string> platTrajectoryList = new List<string>();
 
     public static int[] getLevelIndexes() {
         if(type == 0) {
