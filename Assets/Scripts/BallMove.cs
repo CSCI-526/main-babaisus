@@ -11,7 +11,7 @@ public class BallMove : MonoBehaviour
     private float elapsedTime = 0f;
     private Vector2 lastPosition;
     private float stationaryTime = 0f; 
-    public float stationaryThreshold = 15;
+    private float stationaryThreshold = 10;
     public GameOverManager gameOverManager;
 
     private static bool hasStoppedFor5Seconds = false;
