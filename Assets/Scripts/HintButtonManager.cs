@@ -7,6 +7,8 @@ public class HintButtonManager : MonoBehaviour
 {
    public GameObject hintButton;
    private bool hintsShown = false;
+   public static bool isHintTaken = false;
+
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class HintButtonManager : MonoBehaviour
 
         
 
+    }
+
+    public void ShowHint()
+    {
+        isHintTaken = true;
     }
 
     private IEnumerator BlinkHintButton()

@@ -20,7 +20,8 @@ public class PauseMenu : MonoBehaviour
             restartTip.gameObject.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.R))
-        {
+        { 
+            SendToGoogle.Outcome("Restart");
             RestartGame();
         }
     }

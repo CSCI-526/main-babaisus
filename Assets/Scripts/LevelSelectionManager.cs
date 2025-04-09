@@ -29,6 +29,13 @@ public class LevelSelectionManager : MonoBehaviour
     public static int[] mainLevelIndex = {1, 4, 7, 10, 13, 16, 19, 22, 25};
     public static int[] expertLevelIndex = {1, 4, 7, 10, 13};
 
+    //analytics MAIN lists
+    public static List<int> noStarsList= new List<int>();
+    public static List<string> gameOutcomeList = new List<string>();
+    public static List<string> ballTrajectoryList = new List<string>();
+    public static List<string> platTrajectoryList = new List<string>();
+    public static  List<bool>isHintTaken = new List<bool>();
+
     public static int[] getLevelIndexes() {
         if(type == 0) {
             return mainLevelIndex;

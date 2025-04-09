@@ -11,19 +11,20 @@ public class SendToGoogle : MonoBehaviour
     [SerializeField] private string URL;
 
     private string _sessionID="";
-    private List<Vector2> _platTrajectory;
+    private static List<Vector2> _platTrajectory;
     private int _lastMoveTime;
     private bool _completeLevel;
     private int _levelClearTries;
     private int _noStars;
-
-    private int _currentLevel;
-    private List<Vector2> _ballTrajectory;
-    public string _gameOutcome;
     
 
+    private int _currentLevel;
+    private static List<Vector2> _ballTrajectory;
+    public string _gameOutcome;
 
-    private List<Vector2> _platTrajectoryList = new List<Vector2>();
+
+
+
     //WinLoadNext winLoadNext;
     // Start is called before the first frame update
     private void Awake()
@@ -34,12 +35,24 @@ public class SendToGoogle : MonoBehaviour
 
     }
 
-    public void Outcome(string gameOutcome)
+    public static void Outcome(string gameOutcome)
     {
        
-        _gameOutcome = gameOutcome;
-        //Debug.Log("Set Game Outcome: " + _gameOutcome);
-        
+       
+        LevelSelectionManager.gameOutcomeList.Add(gameOutcome);
+        if ((gameOutcome.Contains("Lose") || gameOutcome.Contains("Exit")) || gameOutcome == "Restart")
+        {
+            LevelSelectionManager.noStarsList.Add(0);
+        }
+        else{LevelSelectionManager.noStarsList.Add(GameOverManager.starForLevel);}
+        _platTrajectory = PlatControl.GetPositions();
+        LevelSelectionManager.platTrajectoryList.Add(string.Join(",", _platTrajectory));
+
+        _ballTrajectory = BallMove.GetPositions();
+        LevelSelectionManager.ballTrajectoryList.Add(string.Join(",", _ballTrajectory));
+
+        LevelSelectionManager.isHintTaken.Add(HintButtonManager.isHintTaken);
+        HintButtonManager.isHintTaken= false;
        
     }
 
@@ -49,30 +62,37 @@ public class SendToGoogle : MonoBehaviour
         // Assign variables
         _currentLevel = (LevelSelectionManager.currentDatalevel)-1;
         _platTrajectory =  PlatControl.GetPositions();
-        _lastMoveTime = 0;
+   
         
    
-        _levelClearTries = LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1];
-        _noStars = GameOverManager.starForLevel;
+        _levelClearTries = (LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1])+1;
+       // _noStars = GameOverManager.starForLevel;
         _ballTrajectory = BallMove.GetPositions();
-        Debug.Log("Game Outcome: " + _gameOutcome);
+        Debug.Log("hiint taken: " + string.Join(',',LevelSelectionManager.isHintTaken));
+
+        
 
 
 
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), string.Join(",", _platTrajectory), _lastMoveTime.ToString(), _gameOutcome.ToString(), _levelClearTries.ToString(), _noStars.ToString(), _currentLevel.ToString(), string.Join(",", _ballTrajectory)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), string.Join(',',LevelSelectionManager.isHintTaken), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
+        LevelSelectionManager.gameOutcomeList= new List<string>();
+        LevelSelectionManager.noStarsList= new List<int>();
+        LevelSelectionManager.platTrajectoryList= new List<string>();
+        LevelSelectionManager.ballTrajectoryList= new List<string>();
+        LevelSelectionManager.isHintTaken= new List<bool>();
     }
 
-    private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
+    private IEnumerator Post(string sessionID, string platTrajectory, string ishintTaken, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.384308309", sessionID);
         form.AddField("entry.1686750853", platTrajectory);
         form.AddField("entry.1512156387", ballTrajectory);
-        form.AddField("entry.877042479", lastMoveTime);
+        form.AddField("entry.877042479", ishintTaken);
         form.AddField("entry.1544985288", gameOutcome);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
