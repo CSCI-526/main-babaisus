@@ -9,12 +9,19 @@ public class BallMove : MonoBehaviour
     public static List<Vector2> positions; // tracking the positions of the ball
     private bool gameStarted = false;
     private float elapsedTime = 0f;
+    private Vector2 lastPosition;
+    private float stationaryTime = 0f; 
+    public float stationaryThreshold = 15;
+    public GameOverManager gameOverManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
         positions = new List<Vector2>();
+        lastPosition = rb.position;
         // rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
@@ -22,6 +29,7 @@ public class BallMove : MonoBehaviour
         rb.gravityScale = 1.0f;
         rb.velocity = new Vector2(speed, rb.velocity.y);
         //Debug.Log(rb.position);
+        gameOverManager = FindObjectOfType<GameOverManager>();
         
         gameStarted = true;
         GameObject bucket = transform.GetChild(0).gameObject;
@@ -37,6 +45,29 @@ public class BallMove : MonoBehaviour
             return;
         
         elapsedTime += Time.deltaTime;
+        
+        if (gameStarted)
+        {
+            
+            if (rb.velocity.magnitude <0.1f)
+            {
+               
+                stationaryTime += Time.deltaTime;
+                if (stationaryTime >= stationaryThreshold)
+                {
+                    //Debug.Log("Ball is stationary for too long, GAME OVER");
+                     gameOverManager.ShowGameOver();
+
+                }
+            }
+            else
+            {
+                stationaryTime = 0f; 
+            }
+
+            lastPosition = rb.position; 
+        }
+
         if (gameStarted && elapsedTime > 0.2f){
             positions.Add(rb.position);
             //Debug.Log(rb.position);
