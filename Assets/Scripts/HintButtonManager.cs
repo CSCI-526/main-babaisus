@@ -8,6 +8,7 @@ public class HintButtonManager : MonoBehaviour
    public GameObject hintButton;
    private bool hintsShown = false;
 
+
     void Start()
     {
         hintButton.GetComponent<Image>().enabled = true;
@@ -23,6 +24,11 @@ public class HintButtonManager : MonoBehaviour
 
         
 
+    }
+
+    public void ShowHint()
+    {
+        LevelSelectionManager.isHintTaken = true;
     }
 
     private IEnumerator BlinkHintButton()

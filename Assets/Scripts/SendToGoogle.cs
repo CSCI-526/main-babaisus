@@ -59,12 +59,13 @@ public class SendToGoogle : MonoBehaviour
         // Assign variables
         _currentLevel = (LevelSelectionManager.currentDatalevel)-1;
         _platTrajectory =  PlatControl.GetPositions();
-        _lastMoveTime = 0;
+   
         
    
         _levelClearTries = (LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1])+1;
        // _noStars = GameOverManager.starForLevel;
         _ballTrajectory = BallMove.GetPositions();
+        Debug.Log("hiint taken: " + LevelSelectionManager.isHintTaken);
         
 
 
@@ -72,21 +73,22 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), _lastMoveTime.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), LevelSelectionManager.isHintTaken.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
         LevelSelectionManager.gameOutcomeList= new List<string>();
         LevelSelectionManager.noStarsList= new List<int>();
         LevelSelectionManager.platTrajectoryList= new List<string>();
         LevelSelectionManager.ballTrajectoryList= new List<string>();
+        LevelSelectionManager.isHintTaken = false;
     }
 
-    private IEnumerator Post(string sessionID, string platTrajectory, string lastMoveTime, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
+    private IEnumerator Post(string sessionID, string platTrajectory, string ishintTaken, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.384308309", sessionID);
         form.AddField("entry.1686750853", platTrajectory);
         form.AddField("entry.1512156387", ballTrajectory);
-        form.AddField("entry.877042479", lastMoveTime);
+        form.AddField("entry.877042479", ishintTaken);
         form.AddField("entry.1544985288", gameOutcome);
         form.AddField("entry.1822642072", levelClearTries);
         form.AddField("entry.1928645636", noStars);
