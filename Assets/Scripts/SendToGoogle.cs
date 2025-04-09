@@ -50,6 +50,9 @@ public class SendToGoogle : MonoBehaviour
 
         _ballTrajectory = BallMove.GetPositions();
         LevelSelectionManager.ballTrajectoryList.Add(string.Join(",", _ballTrajectory));
+
+        LevelSelectionManager.isHintTaken.Add(HintButtonManager.isHintTaken);
+        HintButtonManager.isHintTaken= false;
        
     }
 
@@ -65,7 +68,8 @@ public class SendToGoogle : MonoBehaviour
         _levelClearTries = (LevelSelectionManager.mainRestartCounter[LevelSelectionManager.currentDatalevel-1])+1;
        // _noStars = GameOverManager.starForLevel;
         _ballTrajectory = BallMove.GetPositions();
-        Debug.Log("hiint taken: " + LevelSelectionManager.isHintTaken);
+        Debug.Log("hiint taken: " + string.Join(',',LevelSelectionManager.isHintTaken));
+
         
 
 
@@ -73,12 +77,12 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), LevelSelectionManager.isHintTaken.ToString(), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
+        StartCoroutine(Post(_sessionID.ToString(), string.Join("**\n", LevelSelectionManager.platTrajectoryList), string.Join(',',LevelSelectionManager.isHintTaken), string.Join(',',LevelSelectionManager.gameOutcomeList), _levelClearTries.ToString(), string.Join(',',LevelSelectionManager.noStarsList), _currentLevel.ToString(), string.Join("**\n", LevelSelectionManager.ballTrajectoryList)));
         LevelSelectionManager.gameOutcomeList= new List<string>();
         LevelSelectionManager.noStarsList= new List<int>();
         LevelSelectionManager.platTrajectoryList= new List<string>();
         LevelSelectionManager.ballTrajectoryList= new List<string>();
-        LevelSelectionManager.isHintTaken = false;
+        LevelSelectionManager.isHintTaken= new List<bool>();
     }
 
     private IEnumerator Post(string sessionID, string platTrajectory, string ishintTaken, string gameOutcome, string levelClearTries, string noStars, string currentLevel, string ballTrajectory)

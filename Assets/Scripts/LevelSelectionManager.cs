@@ -34,7 +34,7 @@ public class LevelSelectionManager : MonoBehaviour
     public static List<string> gameOutcomeList = new List<string>();
     public static List<string> ballTrajectoryList = new List<string>();
     public static List<string> platTrajectoryList = new List<string>();
-    public static bool isHintTaken = false;
+    public static  List<bool>isHintTaken = new List<bool>();
 
     public static int[] getLevelIndexes() {
         if(type == 0) {
