@@ -2,13 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     public static int restartCounter = 0;
+    public Image restartTip;
+    private bool tipShowed = false;
 
+    void Start() {
+        tipShowed = false;
+    }
     private void Update() {
+        if(!tipShowed && BallMove.ShouldAppearRestart()) {
+            tipShowed = true;
+            restartTip.gameObject.SetActive(true);
+        }
         if (Input.GetKeyDown(KeyCode.R))
         { 
             SendToGoogle.Outcome("Restart");

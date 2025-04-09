@@ -36,7 +36,7 @@ public class GameOverManager : MonoBehaviour
         gamePassUI.SetActive(true);
 
         var passTime = timer.GetSpentTime();
-        timeText.text = $"{passTime}s Before Ball Drop";
+        timeText.text = $"Spent {passTime} seconds before ball dropped";
 
         var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 4;
         var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 21;

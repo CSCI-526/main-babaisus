@@ -14,7 +14,7 @@ public class BallMove : MonoBehaviour
     public float stationaryThreshold = 15;
     public GameOverManager gameOverManager;
 
-
+    private static bool hasStoppedFor5Seconds = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class BallMove : MonoBehaviour
         rb.gravityScale = 0.0f;
         positions = new List<Vector2>();
         lastPosition = rb.position;
+        hasStoppedFor5Seconds = false;
         // rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
@@ -51,8 +52,13 @@ public class BallMove : MonoBehaviour
             
             if (rb.velocity.magnitude <0.1f)
             {
-               
                 stationaryTime += Time.deltaTime;
+                // stop for 5 seconds
+                if(stationaryTime >= 5f && !hasStoppedFor5Seconds) {
+                    hasStoppedFor5Seconds = true;
+                    // Debug.Log("Ball stopped for 5 sec");
+                }
+
                 if (stationaryTime >= stationaryThreshold)
                 {
                     //Debug.Log("Ball is stationary for too long, GAME OVER");
@@ -63,6 +69,7 @@ public class BallMove : MonoBehaviour
             else
             {
                 stationaryTime = 0f; 
+                hasStoppedFor5Seconds = false;
             }
 
             lastPosition = rb.position; 
@@ -73,12 +80,14 @@ public class BallMove : MonoBehaviour
             //Debug.Log(rb.position);
             elapsedTime = 0f;
         }
-          
-        
     }
 
     public static List<Vector2> GetPositions()
     {
         return positions;
+    }
+
+    public static bool ShouldAppearRestart() {
+        return hasStoppedFor5Seconds;
     }
 }
