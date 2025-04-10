@@ -20,7 +20,7 @@ public class PlatControl : MonoBehaviour
     private float elapsedTime = 0f;
     public static List<Vector2> positions; // tracking the positions of the platform
     
-    private bool circleOverlapping;
+    public bool circleOverlapping;
 
     // Start is called before the first frame update
     void Start()
@@ -113,29 +113,33 @@ public class PlatControl : MonoBehaviour
         return positions;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject maybeCircle = collision.gameObject;
-        if (maybeCircle.CompareTag("Circle")){
-            circleOverlapping = true;
-        }
+    public void SetCircleOverlapping(bool isOverlapping){
+        circleOverlapping = isOverlapping;
     }
 
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        GameObject maybeCircle = collision.gameObject;
-        if (maybeCircle.CompareTag("Circle")){
-            circleOverlapping = true;
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     GameObject maybeCircle = collision.gameObject;
+    //     if (maybeCircle.CompareTag("Circle")){
+    //         circleOverlapping = true;
+    //     }
+    // }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        GameObject maybeCircle = collision.gameObject;
-        if (maybeCircle.CompareTag("Circle")){
-            circleOverlapping = false;
-        }
-    }
+    // void OnTriggerStay2D(Collider2D collision)
+    // {
+    //     GameObject maybeCircle = collision.gameObject;
+    //     if (maybeCircle.CompareTag("Circle")){
+    //         circleOverlapping = true;
+    //     }
+    // }
+
+    // void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     GameObject maybeCircle = collision.gameObject;
+    //     if (maybeCircle.CompareTag("Circle")){
+    //         circleOverlapping = false;
+    //     }
+    // }
 
     // void OnCollisionEnter2D(Collision2D other){
     //     if (!other.gameObject.tag.Equals("Circle")){
