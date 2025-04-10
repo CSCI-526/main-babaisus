@@ -9,7 +9,7 @@ public class LevelSelectionManager : MonoBehaviour
     // only 4 left
     public static string[] missionNames = { "Mission A", "Mission B", "Mission C", "Mission D", "Mission E", "Mission F", "Mission G" };
 
-    public static string[] babyMissionNames = { "Horizontal", "Vertical", "Transparent", "Rotation" };
+    public static string[] tutorialLevelNames = { "Horizontal", "Vertical", "Transparent", "Rotation" };
     public static string[] expertNames = { "Mission Z", "Mission Y" };
 
     // 0: New Level / 1: Tutorial Level / 2: Expert

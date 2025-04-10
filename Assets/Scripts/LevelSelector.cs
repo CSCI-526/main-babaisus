@@ -28,15 +28,9 @@ public class LevelSelector : MonoBehaviour
         int currentType = LevelSelectionManager.type;
         if(currentType == 1) {
             // tutorial level 1-4
-            levelText.text = "Level " + levelInMission.ToString();
+            levelText.text = LevelSelectionManager.tutorialLevelNames[levelInMission - 1];
             actualLevel = levelInMission;
         } else {
-            // int numberOfMission = 3;
-            // if(currentType == 0 && LevelSelectionManager.mission >= 3) {
-            //     actualLevel = 5 + (LevelSelectionManager.mission - 3) * numberOfMission + levelInMission;
-            // } else {
-            //     actualLevel = (LevelSelectionManager.mission - 1) * numberOfMission + levelInMission;
-            // }
             int[] indexes = LevelSelectionManager.getLevelIndexes();
             actualLevel = indexes[LevelSelectionManager.mission - 1] + levelInMission - 1;
             Debug.Log("Actual level: " + actualLevel.ToString());
