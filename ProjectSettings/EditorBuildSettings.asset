@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/MainMenu.unity
     guid: 6dbf44efbffbd4325880f24ad9340176
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/New Tutorial Level 1.unity
+    path: Assets/Scenes/New Levels/Tutorial Levels/1 Horizontal.unity
     guid: ffb35ce1ea11d43f483355ba9b0f2add
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/New Tutorial Level 2.unity
+    path: Assets/Scenes/New Levels/Tutorial Levels/2 Vertical.unity
     guid: 403120fbaea0746e9b9c168b49895c5f
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/New Tutorial Level 3.unity
+    path: Assets/Scenes/New Levels/Tutorial Levels/3 Transparency.unity
     guid: 3bb0d80c7d0004369a0973d403956aad
   - enabled: 1
-    path: Assets/Scenes/New Levels/Tutorial Levels/New Tutorial Level 4.unity
+    path: Assets/Scenes/New Levels/Tutorial Levels/4 Rotation.unity
     guid: 4481e66e4e07842a1be9f3dde54ce808
   - enabled: 1
     path: Assets/Scenes/New Levels/Main Mission A/NEW Level 1.unity
