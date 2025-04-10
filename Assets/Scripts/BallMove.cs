@@ -9,7 +9,6 @@ public class BallMove : MonoBehaviour
     public static List<Vector2> positions; // tracking the positions of the ball
     private bool gameStarted = false;
     private float elapsedTime = 0f;
-    private Vector2 lastPosition;
     private float stationaryTime = 0f; 
     private float stationaryThreshold = 10;
     public GameOverManager gameOverManager;
@@ -21,7 +20,6 @@ public class BallMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
         positions = new List<Vector2>();
-        lastPosition = rb.position;
         hasStoppedFor5Seconds = false;
         // rb.velocity = new Vector2(speed, rb.velocity.y);
     }
@@ -72,7 +70,7 @@ public class BallMove : MonoBehaviour
                 hasStoppedFor5Seconds = false;
             }
 
-            lastPosition = rb.position; 
+            
         }
 
         if (gameStarted && elapsedTime > 0.2f){

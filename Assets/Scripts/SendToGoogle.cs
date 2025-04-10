@@ -40,15 +40,19 @@ public class SendToGoogle : MonoBehaviour
        
        
         LevelSelectionManager.gameOutcomeList.Add(gameOutcome);
-        if ((gameOutcome.Contains("Lose") || gameOutcome.Contains("Exit")) || gameOutcome == "Restart")
-        {
+        if ((gameOutcome.Contains("Lose") || gameOutcome.Contains("Exit")) || gameOutcome == "Restart") 
             LevelSelectionManager.noStarsList.Add(0);
-        }
+        
         else{LevelSelectionManager.noStarsList.Add(GameOverManager.starForLevel);}
+        
         _platTrajectory = PlatControl.GetPositions();
+        if(_platTrajectory==null)
+            _platTrajectory = PlatStickyControlPurple.GetPositions();
         LevelSelectionManager.platTrajectoryList.Add(string.Join(",", _platTrajectory));
 
         _ballTrajectory = BallMove.GetPositions();
+        if(_ballTrajectory==null)
+            _ballTrajectory = BallMoveWithStickyPlatformPurple.GetPositions();
         LevelSelectionManager.ballTrajectoryList.Add(string.Join(",", _ballTrajectory));
 
         LevelSelectionManager.isHintTaken.Add(HintButtonManager.isHintTaken);

@@ -21,11 +21,17 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
     private bool isBallStuck = false;
     private Vector2 collisionNormal;
     private Vector2 ballOffsetLocal;
+    public static List<Vector2> positions; // tracking the positions of the ball
+    private bool gameStarted = false;
+    private float elapsedTime = 0f;
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
+        positions = new List<Vector2>();
 
         ballTransform = transform;
     }
@@ -36,7 +42,7 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         //positions = new List<Vector2>();
-        //gameStarted = true;
+        gameStarted = true;
         GameObject bucket = transform.GetChild(0).gameObject;
         bucket.GetComponent<BucketController2D>().TiltBucket();
         bucket.transform.SetParent(null);
@@ -83,6 +89,10 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (rb == null)
+            return;
+        elapsedTime += Time.deltaTime;
+
         if (isOnPlatform)
         {
             if (isPaused)
@@ -103,6 +113,12 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
                 PauseTimerUpdate();
             }
             
+        }
+
+        if (gameStarted && elapsedTime > 0.2f){
+            positions.Add(rb.position);
+            //Debug.Log(rb.position);
+            elapsedTime = 0f;
         }
     }
 
@@ -139,5 +155,10 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
             ResumeBallMovement();
             Debug.Log("Ball movement resumed after pause.");
         }
+    }
+
+    public static List<Vector2> GetPositions()
+    {
+        return positions;
     }
 }
