@@ -455,6 +455,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6238996260814718391, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158933131069975932, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -216
+      objectReference: {fileID: 0}
     - target: {fileID: 9117165157712036737, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_Pivot.x
       value: 0
