@@ -37,6 +37,7 @@ public class TimerScript : MonoBehaviour
 
     public float startCountDown = 20.0f;
     private float countDown;
+     private AudioSource timerAudio;
     
 
     // Start is called before the first frame update
@@ -53,6 +54,8 @@ public class TimerScript : MonoBehaviour
         cutoffRight = (float) Variables.Object(starBar).Get("mostTime");
         cutoffMiddle = (float) Variables.Object(starBar).Get("mediumTime");
         cutoffLeft = (float) Variables.Object(starBar).Get("leastTime");
+
+        timerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +71,10 @@ public class TimerScript : MonoBehaviour
                 else if(circle2 != null){
                     circle2.GetComponent<BallMoveWithStickyPlatformPurple>().Begin();
                 }
+                if (timerAudio != null && timerAudio.isPlaying)
+                    {
+                        timerAudio.Stop();
+                    }
             }
         }
 
@@ -77,6 +84,12 @@ public class TimerScript : MonoBehaviour
                 Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 timerStarted = true;
+
+                if (timerAudio != null && !timerAudio.isPlaying)
+                    {
+                        Debug.Log("Play timer audio");
+                        timerAudio.Play();
+                    }
             }
         }
 
@@ -117,6 +130,11 @@ public class TimerScript : MonoBehaviour
                 countDown = 0.0f;
                 timeElapsed = startCountDown;
                 timerDone = true;
+
+                if (timerAudio != null && timerAudio.isPlaying)
+                    {
+                        timerAudio.Stop();
+                    }
                 if(circle != null){
                     circle.GetComponent<BallMove>().Begin();
                 }

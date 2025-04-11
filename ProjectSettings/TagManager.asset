@@ -10,6 +10,7 @@ TagManager:
   - RedPlatform
   - BluePlatform
   - RightArrow
+  - StickyPlatform
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bucket
+    uniqueID: 1476536985
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
