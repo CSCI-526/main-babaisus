@@ -24,6 +24,7 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
     public static List<Vector2> positions; // tracking the positions of the ball
     private bool gameStarted = false;
     private float elapsedTime = 0f;
+    private AudioSource rollAudio;
 
 
 
@@ -34,6 +35,7 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
         positions = new List<Vector2>();
 
         ballTransform = transform;
+        rollAudio = GetComponent<AudioSource>();
     }
 
     public void Begin()
@@ -46,6 +48,8 @@ public class BallMoveWithStickyPlatformPurple : MonoBehaviour
         GameObject bucket = transform.GetChild(0).gameObject;
         bucket.GetComponent<BucketController2D>().TiltBucket();
         bucket.transform.SetParent(null);
+        rollAudio.Play();
+        
     }
 
     void Update()

@@ -14,6 +14,7 @@ public class BallMove : MonoBehaviour
     public GameOverManager gameOverManager;
 
     private static bool hasStoppedFor5Seconds = false;
+    private AudioSource rollAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class BallMove : MonoBehaviour
         positions = new List<Vector2>();
         hasStoppedFor5Seconds = false;
         // rb.velocity = new Vector2(speed, rb.velocity.y);
+        rollAudio = GetComponent<AudioSource>();
     }
 
     public void Begin(){
@@ -34,6 +36,7 @@ public class BallMove : MonoBehaviour
         GameObject bucket = transform.GetChild(0).gameObject;
         bucket.GetComponent<BucketController2D>().TiltBucket();
         bucket.transform.SetParent(null);
+        rollAudio.Play();
 
     }
 
