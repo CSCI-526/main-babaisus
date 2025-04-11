@@ -1903,6 +1903,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2614419686602652353, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614419686602652353, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6282249223620375464, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
       propertyPath: m_Name
       value: LevelBounds
