@@ -11,6 +11,8 @@ TagManager:
   - BluePlatform
   - RightArrow
   - StickyPlatform
+  - Platform
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - UI
   - BallLayer
   - MovePlatLayer
-  - 
+  - bg layer
   - 
   - 
   - 
@@ -45,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 1073691827
+    locked: 0
   - name: bucket
     uniqueID: 1476536985
     locked: 0
