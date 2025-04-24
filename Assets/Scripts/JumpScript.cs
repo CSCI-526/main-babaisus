@@ -6,16 +6,26 @@ public class JumpScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Vector2 jumpForce;
+    Rigidbody2D rb;
     void Start()
     {
         jumpForce = new Vector2(transform.up.x, transform.up.y);
         jumpForce *= 10;
+
+        Transform parentTransform = transform.parent;
+        if (parentTransform){
+            GameObject parent = transform.parent.gameObject;
+            if (parent){
+                rb=parent.GetComponent<Rigidbody2D>();
+            }
+        }
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rb.velocity=new Vector2(0,0);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

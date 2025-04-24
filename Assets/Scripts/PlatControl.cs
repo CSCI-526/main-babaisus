@@ -42,7 +42,7 @@ public class PlatControl : MonoBehaviour
     }
     void FixedUpdate()
     {
-        switchTimer -= Time.deltaTime;
+        switchTimer -= Time.fixedDeltaTime;
         bool w = Input.GetKey(KeyCode.W);
         bool a = Input.GetKey(KeyCode.A);
         bool s = Input.GetKey(KeyCode.S);
@@ -89,14 +89,18 @@ public class PlatControl : MonoBehaviour
         // }
         
         movement = new Vector2((d ? horizSpeed : 0) + (a ? -horizSpeed : 0), (w ? vertSpeed : 0) + (s ? -vertSpeed: 0) );
-        rbMoving.position += movement * Time.deltaTime;
+        //rbMoving.position += movement * Time.fixedDeltaTime;
+        rbMoving.velocity = movement;// *Time.fixedDeltaTime;
+        //rbMoving.MovePosition(movement * Time.fixedDeltaTime);
         float rotation = (leftArrow ? angularSpeed : 0) + (rightArrow ? -angularSpeed : 0);
-        rbMoving.rotation += rotation * Time.deltaTime;
+        //rbMoving.rotation += rotation * Time.fixedDeltaTime;
+        rbMoving.angularVelocity = rotation;// * Time.fixedDeltaTime;
+        //rbMoving.MoveRotation(rotation*Time.fixedDeltaTime);
 
         rbStill.position = rbMoving.position;
         rbStill.rotation = rbMoving.rotation;
 
-        elapsedTime += Time.deltaTime;
+        elapsedTime += Time.fixedDeltaTime;
         if (gameStarted && elapsedTime > 0.2f){
             positions.Add(rbMoving.position);
             //Debug.Log(rbMoving.position);
