@@ -3806,11 +3806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5658853995941062952, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.6000366
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5658853995941062952, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.700012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6238996260814718391, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_IsActive
