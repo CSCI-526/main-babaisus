@@ -16,10 +16,14 @@ public class HintButtonManager : MonoBehaviour
     }
     void Update()
     {
-        
+        if (PauseMenu.restartCounter >= 0 && !hintsShown && PauseMenu.restartCounter <= 2 )
+        {
         hintButton.SetActive(true);
+        hintsShown = true;
+        }
         if (PauseMenu.restartCounter > 2 && !hintsShown )
         {
+            hintButton.SetActive(true);
             hintsShown = true;
             Debug.Log("Showing hint button");
             
