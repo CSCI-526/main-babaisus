@@ -43,10 +43,15 @@ public class GameOverManager : MonoBehaviour
         var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 21;
         var expertCompleted = LevelSelectionManager.type == 2 && LevelSelectionManager.currentLevel == 6;
 
-        if(tutorialCompleted || mainCompleted || expertCompleted) {
+        if(tutorialCompleted) {
             // nextButton.SetActive(false);
             passText.text = "You Completed!";
             nextLevelText.text = "To Mission 1";
+        }
+
+        if(mainCompleted || expertCompleted) {
+            nextButton.SetActive(false);
+            passText.text = "You Completed!";
         }
         
         starForLevel = timer.GetStarCount();
