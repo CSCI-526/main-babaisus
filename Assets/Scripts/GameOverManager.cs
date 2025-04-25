@@ -87,9 +87,12 @@ public class GameOverManager : MonoBehaviour
         }
         if(currentType == 1) {
             // load tutorial graphic for tutorial level
-            if(LevelSelectionManager.currentLevel == 4) {
+            if(LevelSelectionManager.currentLevel == 5) {
                 LevelSelectionManager.type = 0;
                 LevelSelectionManager.mission = 1;
+                LevelSelectionManager.currentLevel = 1;
+                LevelSelectionManager.currentDatalevel = 1;
+                Debug.Log("Load Next 4 Current type: " + LevelSelectionManager.type.ToString());
             } 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } else {
