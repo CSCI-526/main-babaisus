@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 737853493}
     - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: startCountDown
-      value: 4.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6238558519461051615, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
@@ -598,12 +598,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 2048462937}
     m_Modifications:
     - target: {fileID: 2617250698078446080, guid: 699e2378da65742c2b2ad03d88888562, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.90999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617250698078446080, guid: 699e2378da65742c2b2ad03d88888562, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.38
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2617250698078446080, guid: 699e2378da65742c2b2ad03d88888562, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2617250698078446080, guid: 699e2378da65742c2b2ad03d88888562, type: 3}
       propertyPath: m_LocalPosition.z
