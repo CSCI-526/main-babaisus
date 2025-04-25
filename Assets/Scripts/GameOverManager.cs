@@ -16,6 +16,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject nextButton;
     public TextMeshProUGUI passText;
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI nextLevelText;
     
 
     public TimerScript timer;
@@ -43,8 +44,9 @@ public class GameOverManager : MonoBehaviour
         var expertCompleted = LevelSelectionManager.type == 2 && LevelSelectionManager.currentLevel == 6;
 
         if(tutorialCompleted || mainCompleted || expertCompleted) {
-            nextButton.SetActive(false);
+            // nextButton.SetActive(false);
             passText.text = "You Completed!";
+            nextLevelText.text = "To Mission 1";
         }
         
         starForLevel = timer.GetStarCount();
@@ -85,6 +87,10 @@ public class GameOverManager : MonoBehaviour
         }
         if(currentType == 1) {
             // load tutorial graphic for tutorial level
+            if(LevelSelectionManager.currentLevel == 4) {
+                LevelSelectionManager.type = 0;
+                LevelSelectionManager.mission = 1;
+            } 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } else {
             Debug.Log("======= load next: " + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString());
