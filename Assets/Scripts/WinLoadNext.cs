@@ -9,17 +9,27 @@ public class WinLoadNext : MonoBehaviour
     // public GameObject winScreen;
     public GameOverManager gameOverManager;
     // Start is called before the first frame update
+
+    Rigidbody2D rb;
     void Start()
     {
         if(gameOverManager == null) {
             gameOverManager = FindObjectOfType<GameOverManager>();
+        }
+
+        Transform parentTransform = transform.parent;
+        if (parentTransform){
+            GameObject parent = transform.parent.gameObject;
+            if (parent){
+                rb=parent.GetComponent<Rigidbody2D>();
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.velocity=new Vector2(0,rb.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
