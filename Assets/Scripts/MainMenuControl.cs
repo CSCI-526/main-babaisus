@@ -25,6 +25,7 @@ public class MainMenuControl : MonoBehaviour
     void Start()
     {
         if(LevelSelectionManager.ShowLevelSelector) {
+            Debug.Log("Current type: " + LevelSelectionManager.type.ToString());
             if(LevelSelectionManager.type == 0) {
                 // back to play panel
                 levelPanel.SetActive(true);

@@ -1103,8 +1103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -557, y: -122.9}
-  m_SizeDelta: {x: 177.4185, y: 50.5441}
+  m_AnchoredPosition: {x: -552, y: -109}
+  m_SizeDelta: {x: 188.6839, y: 79.5123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481121356
 MonoBehaviour:
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 61cecf0f0816c4ef5b63b196e7334d15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2898,8 +2898,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5606, y: -0.000088453}
-  m_SizeDelta: {x: 198.8789, y: 43.948}
+  m_AnchoredPosition: {x: -2.1573, y: -0.0397}
+  m_SizeDelta: {x: 173.106, y: 60.1204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764125441
 MonoBehaviour:
@@ -2923,8 +2923,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ball falls through moving platform
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2948,7 +2948,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.35
+  m_fontSize: 19.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2984,7 +2984,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 15.694733, y: 0, z: 13.45266, w: 0}
+  m_margin: {x: -2.0080338, y: 0, z: 2.1872635, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3578,11 +3578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7158933131069975932, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -760.245
+      value: -751.7006
       objectReference: {fileID: 0}
     - target: {fileID: 7158933131069975932, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 77.3585
+      value: 88.0391
       objectReference: {fileID: 0}
     - target: {fileID: 7158933131069975932, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3590,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7158933131069975932, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -185
+      value: -190.34027
       objectReference: {fileID: 0}
     - target: {fileID: 9117165157712036737, guid: 7e36a19062dfb4dc68f2faec75756824, type: 3}
       propertyPath: m_Pivot.x
