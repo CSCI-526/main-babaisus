@@ -414,6 +414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 151406099393472774, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: angularSpeed
       value: 50
@@ -421,6 +425,10 @@ PrefabInstance:
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: goTransparent
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259210120543947708, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6649666695536230637, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: m_LocalPosition.x
