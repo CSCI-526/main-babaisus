@@ -27,7 +27,7 @@ public class PlayerData : MonoBehaviour
         CalculateTotalStars();
     }
 
-    private void getTutorialLevelStars() {
+    public static void getTutorialLevelStars() {
         for(int i = 1; i < 5; i++){
             tutorialStars[i-1] = PlayerPrefs.GetInt("stars" + LevelSelectionManager.levelPrefix[1] + i.ToString(), 0);
         }

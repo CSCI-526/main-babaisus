@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -42,17 +44,6 @@ public class GameOverManager : MonoBehaviour
         var tutorialCompleted = LevelSelectionManager.type == 1 && LevelSelectionManager.currentLevel == 4;
         var mainCompleted = LevelSelectionManager.type == 0 && LevelSelectionManager.currentLevel == 21;
         var expertCompleted = LevelSelectionManager.type == 2 && LevelSelectionManager.currentLevel == 6;
-
-        if(tutorialCompleted) {
-            // nextButton.SetActive(false);
-            passText.text = "You Completed!";
-            nextLevelText.text = "To Mission 1";
-        }
-
-        if(mainCompleted || expertCompleted) {
-            nextButton.SetActive(false);
-            passText.text = "You Completed!";
-        }
         
         starForLevel = timer.GetStarCount();
         SpawnStar(starForLevel);
@@ -60,6 +51,22 @@ public class GameOverManager : MonoBehaviour
         int currentType = LevelSelectionManager.type;
         if(starForLevel > PlayerPrefs.GetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString(), 0)) {
             PlayerPrefs.SetInt("stars" + LevelSelectionManager.levelPrefix[currentType] + LevelSelectionManager.currentLevel.ToString(), starForLevel);
+        }
+
+        if(tutorialCompleted) {
+            PlayerData.getTutorialLevelStars();
+            var totalStars = PlayerData.tutorialStars.Sum();
+            // nextButton.SetActive(false);
+            passText.text = "You Completed!";
+            nextLevelText.text = "To Mission 1";
+            if(totalStars < 10) {
+                nextButton.GetComponent<Button>().interactable = false;
+            }
+        }
+
+        if(mainCompleted || expertCompleted) {
+            nextButton.SetActive(false);
+            passText.text = "You Completed!";
         }
     }
 
