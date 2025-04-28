@@ -27,13 +27,13 @@ EditorBuildSettings:
     path: Assets/Scenes/New Levels/Main Mission A/NEW Level 2.unity
     guid: 4fdaf053d2878442e97c594bde08fab9
   - enabled: 1
-    path: Assets/Scenes/New Levels/Main Mission A/NEW Level 3.unity
+    path: Assets/Scenes/New Levels/Main Mission B/NEW Level 5.unity
     guid: b4dd1bb482a0840429d88ab107fe4332
   - enabled: 1
-    path: Assets/Scenes/New Levels/Main Mission B/NEW Level 4.unity
+    path: Assets/Scenes/New Levels/Main Mission A/NEW Level 3.unity
     guid: 00061e62dc7b6426d9428398fcff0e97
   - enabled: 1
-    path: Assets/Scenes/New Levels/Main Mission B/NEW Level 5.unity
+    path: Assets/Scenes/New Levels/Main Mission B/NEW Level 4.unity
     guid: 479ff07dd2724492694a887a723521c3
   - enabled: 1
     path: Assets/Scenes/New Levels/Main Mission B/NEW Level 6.unity
