@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "main-babaisus.sln"
+    "dotnet.defaultSolution": "MoveIt.sln"
 }
