@@ -872,9 +872,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 18087466}
     m_Modifications:
+    - target: {fileID: 217078537084950691, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4939
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351299913194689114, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_Size.x
+      value: 5.2299423
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351299913194689114, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5600005
+      objectReference: {fileID: 0}
     - target: {fileID: 6546626228286267643, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
       propertyPath: m_Name
       value: SpikedPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716674895009392160, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_Size.x
+      value: 5.2299423
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716674895009392160, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5600005
       objectReference: {fileID: 0}
     - target: {fileID: 6989654944611187567, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -915,6 +935,10 @@ PrefabInstance:
     - target: {fileID: 6989654944611187567, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470550537800694991, guid: b839c27fb792d4c5d82fd823d5b9f3f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1158,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 6721306517990004878, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: speed
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721306517990004878, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      propertyPath: stationaryThreshold
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_Name

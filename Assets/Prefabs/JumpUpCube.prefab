@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4592802767179232969}
   - component: {fileID: 3019339034911485101}
   - component: {fileID: 3527702552653075054}
+  - component: {fileID: 1139641241730937650}
   m_Layer: 7
   m_Name: JumpUpCube
   m_TagString: Untagged
@@ -240,10 +241,22 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1139641241730937650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501502771416000622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f578bf495fdb446eb2ee757f7e60e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7754956908283942434
 GameObject:
   m_ObjectHideFlags: 0

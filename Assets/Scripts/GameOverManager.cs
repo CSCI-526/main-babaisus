@@ -58,7 +58,7 @@ public class GameOverManager : MonoBehaviour
             var totalStars = PlayerData.tutorialStars.Sum();
             // nextButton.SetActive(false);
             passText.text = "You Completed!";
-            nextLevelText.text = "To Mission 1";
+            nextLevelText.text = "Mission A";
             if(totalStars < 10) {
                 nextButton.GetComponent<Button>().interactable = false;
             }

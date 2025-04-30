@@ -45,9 +45,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 705924413
+    locked: 0
+  - name: Midground
+    uniqueID: 2216013259
+    locked: 0
   - name: bucket
     uniqueID: 1476536985
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2079491473
     locked: 0

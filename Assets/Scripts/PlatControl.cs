@@ -55,6 +55,15 @@ public class PlatControl : MonoBehaviour
             gameStarted = true;
         }
 
+        if (leftArrow || rightArrow){
+            rbMoving.freezeRotation = false;
+            rbStill.freezeRotation = false;
+        }
+        else{
+            rbMoving.freezeRotation = true;
+            rbStill.freezeRotation = true;
+        }
+
 
 
         if (goTransparent){
