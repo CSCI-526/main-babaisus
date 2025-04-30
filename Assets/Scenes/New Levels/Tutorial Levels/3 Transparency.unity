@@ -1504,6 +1504,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447521642423487204, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: angularSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -1558,8 +1562,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7301919222595143055, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 742415775}
   m_SourcePrefab: {fileID: 100100000, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+--- !u!1 &742415774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7301919222595143055, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+  m_PrefabInstance: {fileID: 742415773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &742415775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742415774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509b36dd1568747109a61c5ccf0b3901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStill: {fileID: 742415777}
+  playerMoving: {fileID: 742415776}
+  horizSpeed: 4
+  vertSpeed: 4
+  angularSpeed: 0
+  goTransparent: 1
+  circleOverlapping: 0
+--- !u!1 &742415776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8770883533468796201, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+  m_PrefabInstance: {fileID: 742415773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &742415777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423272336359025051, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
+  m_PrefabInstance: {fileID: 742415773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767362007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 716148305525971379, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.150536
+      value: -8.156
       objectReference: {fileID: 0}
     - target: {fileID: 716148305525971379, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
       propertyPath: m_LocalPosition.y
