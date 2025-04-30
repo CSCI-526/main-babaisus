@@ -48,8 +48,8 @@ public class FreezeRotationInTutorial : MonoBehaviour
         bool s = Input.GetKey(KeyCode.S);
         bool d = Input.GetKey(KeyCode.D);
 
-        bool leftArrow = Input.GetKey(KeyCode.LeftArrow);
-        bool rightArrow = Input.GetKey(KeyCode.RightArrow);
+        bool leftArrow = false;//Input.GetKey(KeyCode.LeftArrow);
+        bool rightArrow = false;//Input.GetKey(KeyCode.RightArrow);
 
         if (w || a || s || d || leftArrow || rightArrow){
             gameStarted = true;
