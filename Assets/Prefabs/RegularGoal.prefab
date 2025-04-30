@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7519600472356518300}
   - component: {fileID: 4420663091861558295}
   - component: {fileID: 427266365246978669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flagRed_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1836474273692825461}
   - component: {fileID: 4143715397079847892}
   - component: {fileID: 3434419478333469156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159631235034502565}
   - component: {fileID: 8760746130768538396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RegularGoal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 151850754614222635}
   - component: {fileID: 6977587120878761166}
   - component: {fileID: 6361544804815826414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
