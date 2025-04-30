@@ -12,6 +12,7 @@ public class BallMove : MonoBehaviour
     private float stationaryTime = 0f; 
     public float stationaryThreshold = 10;
     public GameOverManager gameOverManager;
+    private SpriteRenderer spriteRenderer;
 
     private static bool hasStoppedFor5Seconds = false;
     private AudioSource rollAudio;
