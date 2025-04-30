@@ -525,6 +525,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBounds
       objectReference: {fileID: 0}
+    - target: {fileID: 6624387859500404066, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624387859500404066, guid: 343723758d817427f8e1ac57d86a6aea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.99
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
