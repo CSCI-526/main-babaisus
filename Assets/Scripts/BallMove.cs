@@ -10,7 +10,7 @@ public class BallMove : MonoBehaviour
     private bool gameStarted = false;
     private float elapsedTime = 0f;
     private float stationaryTime = 0f; 
-    private float stationaryThreshold = 10;
+    public float stationaryThreshold = 10;
     public GameOverManager gameOverManager;
 
     private static bool hasStoppedFor5Seconds = false;
