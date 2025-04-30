@@ -48,6 +48,8 @@ public class SendToGoogle : MonoBehaviour
         _platTrajectory = PlatControl.GetPositions();
         if(_platTrajectory==null)
             _platTrajectory = PlatStickyControlPurple.GetPositions();
+        if(_platTrajectory==null)
+            _platTrajectory = FreezeRotationInTutorial.GetPositions();
         LevelSelectionManager.platTrajectoryList.Add(string.Join(",", _platTrajectory));
 
         _ballTrajectory = BallMove.GetPositions();
