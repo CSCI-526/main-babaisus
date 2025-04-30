@@ -46,7 +46,7 @@ public class GameOverManager : MonoBehaviour
         if(tutorialCompleted) {
             // nextButton.SetActive(false);
             passText.text = "You Completed!";
-            nextLevelText.text = "To Mission 1";
+            nextLevelText.text = "Mission A";
         }
 
         if(mainCompleted || expertCompleted) {
