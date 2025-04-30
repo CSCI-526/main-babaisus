@@ -12,6 +12,7 @@ public class BallMove : MonoBehaviour
     private float stationaryTime = 0f; 
     public float stationaryThreshold = 10;
     public GameOverManager gameOverManager;
+    private SpriteRenderer spriteRenderer;
 
     private static bool hasStoppedFor5Seconds = false;
     private AudioSource rollAudio;
@@ -63,7 +64,8 @@ public class BallMove : MonoBehaviour
                 if (stationaryTime >= stationaryThreshold)
                 {
                     //Debug.Log("Ball is stationary for too long, GAME OVER");
-                     gameOverManager.ShowGameOver();
+                    StartCoroutine(ActivateAfterDelay());
+                    //  gameOverManager.ShowGameOver();
 
                 }
             }
@@ -90,5 +92,13 @@ public class BallMove : MonoBehaviour
 
     public static bool ShouldAppearRestart() {
         return hasStoppedFor5Seconds;
+    }
+
+    IEnumerator ActivateAfterDelay()
+    {
+        Debug.Log("Before Wait: " + Time.realtimeSinceStartup);
+        yield return new WaitForSeconds(1f);
+        Debug.Log("After Wait: " + Time.realtimeSinceStartup);
+        gameOverManager.ShowGameOver();
     }
 }

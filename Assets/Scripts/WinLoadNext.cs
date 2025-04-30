@@ -44,7 +44,8 @@ public class WinLoadNext : MonoBehaviour
             // winScreen.SetActive(true);
             if(gameOverManager) {
                 Debug.Log("pass game, stars acuired: 3");
-                gameOverManager.ShowPassGame();
+                StartCoroutine(ActivateAfterDelay());
+                // gameOverManager.ShowPassGame();
             } else {
                 SceneManager.LoadScene(nextLevelName);
             }
@@ -63,10 +64,19 @@ public class WinLoadNext : MonoBehaviour
             // winScreen.SetActive(true);
             if(gameOverManager) {
                 // Debug.Log("pass game, stars acuired: 3");
-                gameOverManager.ShowPassGame();
+                StartCoroutine(ActivateAfterDelay());
+                // gameOverManager.ShowPassGame();
             } else {
                 SceneManager.LoadScene(nextLevelName);
             }
         }
+    }
+
+    IEnumerator ActivateAfterDelay()
+    {
+        Debug.Log("Before Wait: " + Time.realtimeSinceStartup);
+        yield return new WaitForSeconds(1f);
+        Debug.Log("After Wait: " + Time.realtimeSinceStartup);
+        gameOverManager.ShowPassGame();
     }
 }
