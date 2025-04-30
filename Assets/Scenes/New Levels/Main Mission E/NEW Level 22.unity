@@ -2219,7 +2219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8490520903874221200, guid: 22977328ec05142ecbc79f884f929681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.85
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 8490520903874221200, guid: 22977328ec05142ecbc79f884f929681, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3154,9 +3154,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1790047901701455911, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
+      propertyPath: m_Size.x
+      value: 5.217589
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284557131366419166, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.181
+      objectReference: {fileID: 0}
     - target: {fileID: 4944626770277849363, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
       propertyPath: m_Name
       value: DoubleLayerPlatform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906907638002331314, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295996315256271965, guid: d4fdb90e9ec1c4a20815ef4c897954c8, type: 3}
+      propertyPath: m_Size.x
+      value: 5.217589
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3219,6 +3235,10 @@ PrefabInstance:
     - target: {fileID: 6721306517990004878, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721306517990004878, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
+      propertyPath: stationaryThreshold
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7125279138159614523, guid: b155ded58fa9f4bde9a24a1ed62a0534, type: 3}
       propertyPath: m_Name
