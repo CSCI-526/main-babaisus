@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManager: {fileID: 0}
+  loseSound: {fileID: 8300000, guid: f60c39e12d82349369b143b1f630c112, type: 3}

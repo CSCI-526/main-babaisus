@@ -7,6 +7,7 @@ public class SpikeScript : MonoBehaviour
 {
     public GameOverManager gameOverManager;
     // Start is called before the first frame update
+    public AudioClip loseSound;
     void Start()
     {
         if(gameOverManager == null) {
@@ -25,6 +26,10 @@ public class SpikeScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Circle")){
+            AudioSource circleAudio = collision.gameObject.GetComponent<AudioSource>();
+            circleAudio.clip = loseSound;
+            circleAudio.volume = 0.4f;
+            circleAudio.Play();
             Debug.Log("Spike hit, restart level");
             gameOverManager.ShowGameOver();
             // TODO: when hit the flag, call this function
