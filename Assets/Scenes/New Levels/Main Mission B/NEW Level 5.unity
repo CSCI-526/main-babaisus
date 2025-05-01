@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 53756787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.15, y: -9.99, z: 0}
+  m_LocalPosition: {x: -4.15, y: -10.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -640,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649666695536230637, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.77
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6649666695536230637, guid: 9924d7c492a124a09b0d235bf54f5041, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1345,9 +1345,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5981925613049436255, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509640729894795965, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_text
+      value: "15\xB0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877291057453444904, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.6487255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693587678445342087, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.42752
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870614505630357296, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.418726
+      objectReference: {fileID: 0}
     - target: {fileID: 8327573924186849735, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
       propertyPath: m_Name
       value: LevelHint3_NEW Level 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327573924186849735, guid: c2c58baa6ff2b4455b27036dfcbef468, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
