@@ -9,6 +9,7 @@ public class WinLoadNext : MonoBehaviour
     // public GameObject winScreen;
     public GameOverManager gameOverManager;
     // Start is called before the first frame update
+    private AudioSource winAudio;
 
     Rigidbody2D rb;
     void Start()
@@ -24,17 +25,20 @@ public class WinLoadNext : MonoBehaviour
                 rb=parent.GetComponent<Rigidbody2D>();
             }
         }
+        winAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity=new Vector2(0,rb.velocity.y);
+        // winAudio.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Circle")){
+            winAudio.Play();
             Debug.Log("Flag hit, next level");
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
             rb.gravityScale = 0.0f;
