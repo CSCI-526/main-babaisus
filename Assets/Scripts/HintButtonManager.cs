@@ -45,13 +45,12 @@ public class HintButtonManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            // Enable the hint button and disable the disable hint button
+            
             hintButton.GetComponent<Image>().enabled = true;
             disableHintButton.SetActive(false);
             disableHintButton.GetComponent<Image>().enabled = false;
             yield return new WaitForSeconds(0.2f);
 
-            // Disable the hint button and enable the disable hint button
             hintButton.GetComponent<Image>().enabled = false;
             disableHintButton.SetActive(true);
             disableHintButton.GetComponent<Image>().enabled = true;
