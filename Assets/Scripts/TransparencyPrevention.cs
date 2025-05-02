@@ -21,7 +21,13 @@ public class TransparencyPrevention : MonoBehaviour
     {
         GameObject maybeCircle = collision.gameObject;
         if (maybeCircle.CompareTag("Circle")){
-            player.GetComponent<PlatControl>().SetCircleOverlapping(true);
+            PlatControl script = player.GetComponent<PlatControl>();
+            if (script){
+                script.SetCircleOverlapping(true);
+            }
+            else{
+                player.GetComponent<FreezeRotationInTutorial>().SetCircleOverlapping(true);
+            }
         }
     }
 
