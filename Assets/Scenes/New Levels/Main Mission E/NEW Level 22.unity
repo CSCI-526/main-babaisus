@@ -134,6 +134,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelHint3_NEW Level 22
       objectReference: {fileID: 0}
+    - target: {fileID: 1192389559340714752, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576374207138761199, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286132386038270375, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286132386038270375, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286132386038270375, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
     - target: {fileID: 6712327847954266928, guid: 346be551066cd4a47bd3a54aaa3021c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.810774
