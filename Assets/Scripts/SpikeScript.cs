@@ -28,7 +28,7 @@ public class SpikeScript : MonoBehaviour
         if (collision.gameObject.tag.Equals("Circle")){
             AudioSource circleAudio = collision.gameObject.GetComponent<AudioSource>();
             circleAudio.clip = loseSound;
-            circleAudio.volume = 0.4f;
+            circleAudio.volume = 0.1f;
             circleAudio.Play();
             Debug.Log("Spike hit, restart level");
             gameOverManager.ShowGameOver();
