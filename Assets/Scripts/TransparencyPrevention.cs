@@ -26,6 +26,7 @@ public class TransparencyPrevention : MonoBehaviour
                 script.SetCircleOverlapping(true);
             }
             else{
+                // Debug.Log("Circle overlapping in Tut3");
                 player.GetComponent<FreezeRotationInTutorial>().SetCircleOverlapping(true);
             }
         }
@@ -35,7 +36,14 @@ public class TransparencyPrevention : MonoBehaviour
     {
         GameObject maybeCircle = collision.gameObject;
         if (maybeCircle.CompareTag("Circle")){
-            player.GetComponent<PlatControl>().SetCircleOverlapping(true);
+            PlatControl script = player.GetComponent<PlatControl>();
+            if (script){
+                script.SetCircleOverlapping(true);
+            }
+            else{
+                // Debug.Log("Circle overlapping in Tut3");
+                player.GetComponent<FreezeRotationInTutorial>().SetCircleOverlapping(true);
+            }
         }
     }
 
@@ -43,7 +51,14 @@ public class TransparencyPrevention : MonoBehaviour
     {
         GameObject maybeCircle = collision.gameObject;
         if (maybeCircle.CompareTag("Circle")){
-            player.GetComponent<PlatControl>().SetCircleOverlapping(false);
+            PlatControl script = player.GetComponent<PlatControl>();
+            if (script){
+                script.SetCircleOverlapping(false);
+            }
+            else{
+                // Debug.Log("Circle overlapping in Tut3");
+                player.GetComponent<FreezeRotationInTutorial>().SetCircleOverlapping(false);
+            }
         }
     }
 }
