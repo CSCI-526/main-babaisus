@@ -624,6 +624,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 5065492627333307685, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+      propertyPath: disableHintButton
+      value: 
+      objectReference: {fileID: 1745868819}
     - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: circle
       value: 
@@ -1244,6 +1248,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7406464746586717015, guid: d564a4f220673408daadaabce4ed87f2, type: 3}
   m_PrefabInstance: {fileID: 1350397742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1745868819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2119632425811652841, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
+  m_PrefabInstance: {fileID: 479578611}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1805353803
 PrefabInstance:

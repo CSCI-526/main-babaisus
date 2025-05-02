@@ -8,11 +8,13 @@ public class HintButtonManager : MonoBehaviour
    public GameObject hintButton;
    private bool hintsShown = false;
    public static bool isHintTaken = false;
+    public GameObject disableHintButton;
 
 
     void Start()
     {
         hintButton.GetComponent<Image>().enabled = true;
+        
     }
     void Update()
     {
@@ -43,11 +45,17 @@ public class HintButtonManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-           // Debug.Log("Blinking hint button");
+            // Enable the hint button and disable the disable hint button
             hintButton.GetComponent<Image>().enabled = true;
-            yield return new WaitForSeconds(0.2f); 
+            disableHintButton.SetActive(false);
+            disableHintButton.GetComponent<Image>().enabled = false;
+            yield return new WaitForSeconds(0.2f);
+
+            // Disable the hint button and enable the disable hint button
             hintButton.GetComponent<Image>().enabled = false;
-            yield return new WaitForSeconds(0.2f); 
+            disableHintButton.SetActive(true);
+            disableHintButton.GetComponent<Image>().enabled = true;
+            yield return new WaitForSeconds(0.2f);
         }
         hintButton.GetComponent<Image>().enabled = true;
        
