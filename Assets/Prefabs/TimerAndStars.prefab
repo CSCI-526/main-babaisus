@@ -3905,6 +3905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintButton: {fileID: 1036786216749896215}
+  disableHintButton: {fileID: 2119632425811652841}
 --- !u!1 &8015025939922142840
 GameObject:
   m_ObjectHideFlags: 0
