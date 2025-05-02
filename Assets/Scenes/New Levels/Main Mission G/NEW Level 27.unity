@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 737853493}
     - target: {fileID: 5759910927539077767, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: startCountDown
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6238558519461051615, guid: 4e8a5c7e46df6447c8363130f9863efe, type: 3}
       propertyPath: cutoff
